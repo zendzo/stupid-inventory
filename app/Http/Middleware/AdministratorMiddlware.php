@@ -18,8 +18,8 @@ class AdministratorMiddlware
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()){
-            if (Auth::user()->is_admin !== true) {
-                return redirect()->route('user.dashboard');
+            if (Auth::user()->is_admin != 1) {
+                return redirect('/welcome');
             }
         }else{
             return redirect('/login');

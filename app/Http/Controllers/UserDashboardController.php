@@ -10,8 +10,8 @@ class UserDashboardController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            if (Auth::user()->is_admin === true) {
-                return redirect()->route('admin.dashboard');
+            if (Auth::user()->is_admin == true) {
+                return redirect('/admin');
             }
         }
 
