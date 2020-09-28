@@ -15,31 +15,19 @@
       <ul class="collapse" id="dashboard" data-parent="#sidebar-menu">
         <div class="sub-menu">
 
-
-
           <li>
             <a class="sidenav-item-link" href="#">
-              <span class="nav-text">Ecommerce</span>
-
+              <span class="nav-text">Stok Masuk</span>
+              <span class="badge badge-success">new</span>
             </a>
           </li>
-
-
-
-
-
 
           <li>
             <a class="sidenav-item-link" href="analytics.html">
-              <span class="nav-text">Analytics</span>
-
-              <span class="badge badge-success">new</span>
-
+              <span class="nav-text">Stok Keluar</span>
+              <span class="badge badge-warning">new</span>
             </a>
           </li>
-
-
-
 
         </div>
       </ul>
@@ -48,58 +36,24 @@
       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#app"
         aria-expanded="false" aria-controls="app">
         <i class="mdi mdi-pencil-box-multiple"></i>
-        <span class="nav-text">App</span> <b class="caret"></b>
+        <span class="nav-text">DATA</span> <b class="caret"></b>
       </a>
       <ul class="collapse" id="app" data-parent="#sidebar-menu">
         <div class="sub-menu">
 
+          <li>
+            <a class="sidenav-item-link" href="{{ route('admin.category') }}">
+              <span class="nav-text">Category</span>
 
+            </a>
+          </li>
 
           <li>
             <a class="sidenav-item-link" href="chat.html">
-              <span class="nav-text">Chat</span>
+              <span class="nav-text">Product</span>
 
             </a>
           </li>
-
-
-
-
-
-
-          <li>
-            <a class="sidenav-item-link" href="contacts.html">
-              <span class="nav-text">Contacts</span>
-
-            </a>
-          </li>
-
-
-
-
-
-
-          <li>
-            <a class="sidenav-item-link" href="team.html">
-              <span class="nav-text">Team</span>
-
-            </a>
-          </li>
-
-
-
-
-
-
-          <li>
-            <a class="sidenav-item-link" href="calendar.html">
-              <span class="nav-text">Calendar</span>
-
-            </a>
-          </li>
-
-
-
 
         </div>
       </ul>
