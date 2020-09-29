@@ -3,9 +3,6 @@
 
   <!-- sidebar menu -->
   <ul class="nav sidebar-inner" id="sidebar-menu">
-
-
-
     <li class="has-sub">
       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
         aria-expanded="false" aria-controls="dashboard">
@@ -41,7 +38,7 @@
       <ul class="collapse" id="app" data-parent="#sidebar-menu">
         <div class="sub-menu">
 
-          <li>
+          <li class="{{active(['admin.category.*'])}}">
             <a class="sidenav-item-link" href="{{ route('admin.category') }}">
               <span class="nav-text">Category</span>
 

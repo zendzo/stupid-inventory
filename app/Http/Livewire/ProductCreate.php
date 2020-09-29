@@ -28,9 +28,9 @@ class ProductCreate extends Component
         $this->validate([
             'name' => 'required|min:3',
             'description' => 'required|min:5',
-            'category_id' => 'required',
+            'category_id' => 'required|min:1',
+            'unit_id' => 'required|min:1',
             'code' => 'required',
-            'unit_id' => 'required'
         ]);
         
         $product = Product::create([

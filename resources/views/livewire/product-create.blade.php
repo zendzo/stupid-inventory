@@ -5,7 +5,11 @@
                 <label for="name">Category</label>
             </div>
             <div class="col-12 col-md-9">
-                <select wire:model.lazy="category_id" class="form-control">
+                <select wire:model.lazy="category_id" 
+                class="form-control 
+                @error('category_id') is-invalid @enderror
+                ">
+                    <option value="-1">Select Category</option>
                     @foreach ($categories as $category)
                         <option value="{{$category->id}}">{{ $category->name }}</option>
                     @endforeach
@@ -32,10 +36,10 @@
         </div>
         <div class="form-group row">
             <div class="col-12 col-md-3 text-right">
-                <label for="name">Code</label>
+                <label for="code">Code</label>
             </div>
             <div class="col-12 col-md-9">
-                <input type="text" id="name" class="form-control @error('code') is-invalid @enderror" wire:model.lazy="code" placeholder="Enter Code Name">
+                <input type="text" id="code" class="form-control @error('code') is-invalid @enderror" wire:model.lazy="code" placeholder="Enter Code Name">
                 @error('code')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -48,7 +52,7 @@
                 <label for="">Description</label>
             </div>
             <div class="col-12 col-md-9">
-                <input type="text" class="form-control @error('description') is-invalid @enderror"  wire:model.lazy="description" placeholder="Category Description">
+                <input type="text" class="form-control @error('description') is-invalid @enderror"  wire:model.lazy="description" placeholder="Product Description">
                 @error('description')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -61,7 +65,8 @@
                 <label for="name">Unit</label>
             </div>
             <div class="col-12 col-md-9">
-                <select wire:model.lazy="unit_id" class="form-control">
+                <select wire:model.lazy="unit_id" class="form-control @error('unit_id') is-invalid @enderror">
+                    <option value="-1">Select Unit</option>
                     @foreach ($units as $unit)
                         <option value="{{$unit->id}}" {{ $loop->first ? 'selected':'' }}>{{ $unit->symbol }} - ({{$unit->name}})</option>
                     @endforeach
