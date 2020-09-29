@@ -11,7 +11,7 @@ class UserDashboardController extends Controller
     {
         if (Auth::check()) {
             if (Auth::user()->is_admin == true) {
-                return redirect('/admin');
+                return redirect('/admin/dashboard');
             }
         }
 

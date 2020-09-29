@@ -24,7 +24,7 @@ Route::get('/', [
 ])->middleware(['auth'])->name('user.dashboard');
 
 Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(){
-    Route::get('/',[AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard',[AdminDashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/category', [CategoryController::class, 'index'])->name('category');
 
