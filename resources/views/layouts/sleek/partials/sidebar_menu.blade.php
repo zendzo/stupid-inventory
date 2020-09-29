@@ -49,8 +49,22 @@
           </li>
 
           <li>
-            <a class="sidenav-item-link" href="chat.html">
+            <a class="sidenav-item-link" href="{{ route('admin.unit') }}">
+              <span class="nav-text">Unit</span>
+
+            </a>
+          </li>
+
+          <li>
+            <a class="sidenav-item-link" href="{{ route('admin.product') }}">
               <span class="nav-text">Product</span>
+
+            </a>
+          </li>
+
+          <li>
+            <a class="sidenav-item-link" href="{{ route('admin.supplier') }}">
+              <span class="nav-text">Supplier</span>
 
             </a>
           </li>
