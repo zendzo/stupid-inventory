@@ -14,15 +14,15 @@
 
           <li>
             <a class="sidenav-item-link" href="#">
-              <span class="nav-text">Stok Masuk</span>
-              <span class="badge badge-success">new</span>
+              <span class="nav-text">Penjualan</span>
+              <span class="badge badge-success">IN</span>
             </a>
           </li>
 
           <li>
-            <a class="sidenav-item-link" href="analytics.html">
-              <span class="nav-text">Stok Keluar</span>
-              <span class="badge badge-warning">new</span>
+            <a class="sidenav-item-link" href="#">
+              <span class="nav-text">Pembelian</span>
+              <span class="badge badge-warning">OUT</span>
             </a>
           </li>
 
