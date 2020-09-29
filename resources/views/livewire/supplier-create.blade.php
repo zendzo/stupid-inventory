@@ -5,7 +5,7 @@
                 <label for="name">Name</label>
             </div>
             <div class="col-12 col-md-9">
-                <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" wire:model.lazy="name" placeholder="Enter Supplier Name">
+                <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" wire:model.lazy="name" placeholder="Enter Distributor Name">
                 @error('name')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -31,7 +31,7 @@
                 <label for="phone">Phone</label>
             </div>
             <div class="col-12 col-md-9">
-                <input type="text" id="phone" class="form-control @error('phone') is-invalid @enderror" wire:model.lazy="phone" placeholder="Enter Supplier Phone">
+                <input type="text" id="phone" class="form-control @error('phone') is-invalid @enderror" wire:model.lazy="phone" placeholder="Enter Distributor Phone">
                 @error('phone')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -60,7 +60,7 @@
                 <label for="">Description</label>
             </div>
             <div class="col-12 col-md-9">
-                <input type="text" class="form-control @error('description') is-invalid @enderror"  wire:model.lazy="description" placeholder="Description">
+                <input type="text" class="form-control @error('description') is-invalid @enderror"  wire:model.lazy="description" placeholder="Distributor Description">
                 @error('description')
                 <div class="invalid-feedback">
                     {{ $message }}

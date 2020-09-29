@@ -61,7 +61,7 @@
 
           <li>
             <a class="sidenav-item-link" href="{{ route('admin.supplier') }}">
-              <span class="nav-text">Supplier</span>
+              <span class="nav-text">Distributor</span>
 
             </a>
           </li>

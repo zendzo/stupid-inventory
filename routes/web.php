@@ -32,7 +32,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
 
     Route::get('/unit', [UnitController::class, 'index'])->name('unit');
 
-    Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier');
+    Route::get('/distributor', [SupplierController::class, 'index'])->name('supplier');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
