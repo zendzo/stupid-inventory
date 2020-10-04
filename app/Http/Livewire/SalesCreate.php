@@ -21,6 +21,12 @@ class SalesCreate extends Component
         return view('livewire.sales-create');
     }
 
+    public function mount()
+    {
+        $this->code = strtoupper(Str::random(10));
+        $this->sale_date = date('m-d-Y');
+    }
+
     public function addSales()
     {
         $this->validate([
@@ -36,10 +42,8 @@ class SalesCreate extends Component
             'name' => $this->name,
             'code' => $this->code,
             'sale_type' => $this->sale_type,
-            // 'sale_date' => $this->sale_date,
-            'sale_date' => Carbon::now(),
-            // 'sent_date' => $this->sent_date,
-            'sent_date' => Carbon::now()->addDay(),
+            'sale_date' => $this->sale_date,
+            'sent_date' => $this->sent_date,
             'description' => $this->description
         ]);
 

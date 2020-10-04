@@ -55,7 +55,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-3">
                             <div class="form-group">
                                 <label for="Zip">Tgl. Pengiriman</label>
                                 <input type="text" class="form-control @error('sent_date') is-invalid @enderror" wire:model.lazy="sent_date" placeholder="DD-MM-YYY">
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-3">
                     <div class="form-group">
                     <label for="lname">Keterangan</label>
                     <input type="text" class="form-control @error('sent_date') is-invalid @enderror" wire:model.lazy="description" placeholder="Keterangan">
@@ -78,6 +78,10 @@
                     </div>
                     @enderror
                     </div>
+                </div>
+                <div class="col-sm-9">
+                    <livewire:sale-list></livewire:sale-list>
+                    <livewire:sale-entry></livewire:sale-entry>
                 </div>
             </div>
             
