@@ -3,7 +3,7 @@
         <h2>Sales Detail</h2>
     </div>
     <div class="card-body">
-        <form wire:submit.prevent="addSales">
+        {{-- <form wire:submit.prevent="addSales"> --}}
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
@@ -81,8 +81,19 @@
                 </div>
             </div>
             <div class="form-footer pt-5 border-top">
-                <button type="submit" class="btn btn-primary btn-default">Save</button>
+                <button wire:click="addSales" class="btn btn-primary btn-default">
+                    <div wire:loading.class="sk-wave">
+                        <div class="rect1"></div>
+                        <div class="rect2"></div>
+                        <div class="rect3"></div>
+                        <div class="rect4"></div>
+                        <div class="rect5"></div>
+                    </div>
+                    <div wire:loading.remove>
+                        Save
+                    </div>
+                </button>
             </div>
-        </form>
+        {{-- </form> --}}
     </div>
 </div>
