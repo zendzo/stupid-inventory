@@ -80,16 +80,17 @@
                     </div>
                 </div>
             </div>
+            
             <div class="form-footer pt-5 border-top">
-                <button wire:click="addSales" class="btn btn-primary btn-default">
-                    <div wire:loading.class="sk-wave" wire:target="addSales">
+                <button wire:click="updateSales" class="btn btn-primary btn-default">
+                    <div wire:loading.class="sk-wave" wire:target="updateSales">
                         <div class="rect1"></div>
                         <div class="rect2"></div>
                         <div class="rect3"></div>
                         <div class="rect4"></div>
                         <div class="rect5"></div>
                     </div>
-                    <div wire:loading.remove wire:target="addSales">
+                    <div wire:loading.remove wire:target="updateSales">
                         Save
                     </div>
                 </button>

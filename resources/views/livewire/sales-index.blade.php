@@ -16,7 +16,7 @@
                     @endif
 
                     @if ($editSales)
-                    <livewire:category-edit></livewire:category-edit>
+                    <livewire:sales-edit></livewire:sales-edit>
                     @else
                     <livewire:sales-create></livewire:sales-create>
                     @endif
@@ -31,6 +31,8 @@
                                 <th scope="col">Tgl. Penjualan</th>
                                 <th scope="col">Tgl. Pengiriman</th>
                                 <th scope="col">Keterangan</th>
+                                <th>Total</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,9 +45,16 @@
                                 <td>{{$sale->sale_date}}</td>
                                 <td>{{$sale->sent_date}}</td>
                                 <td>{{Str::limit($sale->description,10)}}</td>
+                                <td></td>
                                 <td>
-                                    <button wire:click="getCategory({{$sale->id}})" class="btn btn-sm btn-info text-white">Edit</button>
-                                    <button wire:click="destroy({{$sale->id}})" class="btn btn-sm btn-danger text-white">Delete</button>
+                                    {{-- <button wire:click="getSales({{$sale->id}})" class="btn btn-sm btn-info text-white">Edit</button>
+                                    <button wire:click="destroy({{$sale->id}})" class="btn btn-sm btn-danger text-white">Delete</button> --}}
+                                    <button wire:click="getSales({{ $sale->id }})" type="button" class="mb-1 btn btn-sm btn-success">
+                                        <i class=" mdi mdi-checkbox-marked-outline mr-1"></i> Process
+                                    </button>
+                                    <button wire:click="showSales" type="button" class="mb-1 btn btn-sm btn-warning">
+                                        <i class=" mdi mdi-file-document"></i> Invoice
+                                    </button>
                                 </td>
                             </tr>
                             @endforeach

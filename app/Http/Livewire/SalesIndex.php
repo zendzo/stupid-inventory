@@ -28,6 +28,8 @@ class SalesIndex extends Component
     public function handleSalesUpdated($sales)
     {
         session()->flash('message', 'Sales '.$sales['name'].'  Successfully Updated');
+
+        $this->editSales = false;
     }
 
     public function getSales($id)
