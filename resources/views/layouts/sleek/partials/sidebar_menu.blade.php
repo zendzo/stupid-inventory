@@ -13,7 +13,7 @@
         <div class="sub-menu">
 
           <li>
-            <a class="sidenav-item-link" href="#">
+            <a class="sidenav-item-link" href="{{ route('admin.sales') }}">
               <span class="nav-text">Penjualan</span>
               <span class="badge badge-success">IN</span>
             </a>
