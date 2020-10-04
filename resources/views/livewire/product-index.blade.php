@@ -26,6 +26,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
+                                <th scope="col">Harga</th>
                                 <th scope="col">Category</th>
                                 <th scope="col">Kode</th>
                                 <th scope="col">Satuan</th>
@@ -37,6 +38,7 @@
                             <tr>
                                 <td scope="row">{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
+                                <td>{{$product->price}}</td>
                                 <td>{{$product->category->name}}</td>
                                 <td>{{$product->code}}</td>
                                 <td>{{$product->unit->symbol}}</td>

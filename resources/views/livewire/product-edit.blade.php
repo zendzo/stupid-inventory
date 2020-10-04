@@ -32,6 +32,19 @@
         </div>
         <div class="form-group row">
             <div class="col-12 col-md-3 text-right">
+                <label for="name">Price</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" id="name" class="form-control @error('price') is-invalid @enderror" wire:model.lazy="price" placeholder="Enter Category Name">
+                @error('price')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12 col-md-3 text-right">
                 <label for="name">Code</label>
             </div>
             <div class="col-12 col-md-9">

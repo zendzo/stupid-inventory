@@ -13,6 +13,7 @@ class ProductCreate extends Component
     public $description;
     public $category_id;
     public $code;
+    public $price;
     public $unit_id;
 
     public function render()
@@ -31,6 +32,7 @@ class ProductCreate extends Component
             'category_id' => 'required|min:1',
             'unit_id' => 'required|min:1',
             'code' => 'required',
+            'price' => 'required',
         ]);
         
         $product = Product::create([
@@ -38,6 +40,7 @@ class ProductCreate extends Component
             'description' => $this->description,
             'category_id' => $this->category_id,
             'code' => $this->code,
+            'price' => $this->price,
             'unit_id' => $this->unit_id,
         ]);
         
