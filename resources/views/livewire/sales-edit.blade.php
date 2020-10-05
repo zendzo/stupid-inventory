@@ -79,10 +79,6 @@
                     @enderror
                     </div>
                 </div>
-                <div class="col-sm-9">
-                    <livewire:sale-list></livewire:sale-list>
-                    <livewire:sale-entry></livewire:sale-entry>
-                </div>
             </div>
             
             <div class="form-footer pt-5 border-top">

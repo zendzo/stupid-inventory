@@ -24,7 +24,7 @@ class SalesCreate extends Component
     public function mount()
     {
         $this->code = strtoupper(Str::random(10));
-        $this->sale_date = date('m-d-Y');
+        $this->sale_date = date('d-m-Y');
     }
 
     public function addSales()
@@ -50,6 +50,8 @@ class SalesCreate extends Component
         $this->resetInput();
 
         $this->emit('salesStored',$sales);
+
+        return redirect()->route('admin.sales.show', $sales->id);
     }
 
     public function resetInput()

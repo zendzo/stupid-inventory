@@ -22,7 +22,7 @@
 
 
   <!-- SLEEK CSS -->
-  <link id="sleek-css" rel="stylesheet" href="{{ asset('admin/assets/css/sleek.css') }}" />
+  <link rel="stylesheet" href="{{ asset('admin/assets/css/sleek.css') }}" />
 
   <!-- FAVICON -->
   <link href="admin/assets/img/favicon.png" rel="shortcut icon" />

@@ -47,11 +47,11 @@
                                 <td>{{Str::limit($sale->description,10)}}</td>
                                 <td></td>
                                 <td>
-                                    {{-- <button wire:click="getSales({{$sale->id}})" class="btn btn-sm btn-info text-white">Edit</button>
-                                    <button wire:click="destroy({{$sale->id}})" class="btn btn-sm btn-danger text-white">Delete</button> --}}
-                                    <button wire:click="getSales({{ $sale->id }})" type="button" class="mb-1 btn btn-sm btn-success">
+                                    <button wire:click="getSales({{$sale->id}})" class="btn btn-sm btn-info text-white">Edit</button>
+                                    {{-- <button wire:click="destroy({{$sale->id}})" class="btn btn-sm btn-danger text-white">Delete</button> --}}
+                                    <a href="{{ route('admin.sales.show', $sale->id) }}" wire:click="getSales({{ $sale->id }})" type="a" class="mb-1 btn btn-sm btn-success">
                                         <i class=" mdi mdi-checkbox-marked-outline mr-1"></i> Process
-                                    </button>
+                                    </a>
                                     <button wire:click="showSales" type="button" class="mb-1 btn btn-sm btn-warning">
                                         <i class=" mdi mdi-file-document"></i> Invoice
                                     </button>

@@ -9,7 +9,7 @@ class SalesIndex extends Component
 {
     protected $listeners = [
         'salesStored' => 'handleSalesStored',
-        'salesUpdated' => 'handleSalesUpdated'
+        'salesUpdated' => 'handleSalesUpdated',
     ];
     public $editSales = false;
 

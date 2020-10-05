@@ -25,6 +25,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
     Route::get('/distributor', [SupplierController::class, 'index'])->name('supplier');
 
     Route::get('/sales', [SalesController::class, 'index'])->name('sales');
+
+    Route::get('/sales/{id}', [SalesController::class, 'show'])->name('sales.show');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

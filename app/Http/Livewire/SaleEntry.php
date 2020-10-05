@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Product;
+use App\Models\Sale;
 use Livewire\Component;
 
 class SaleEntry extends Component
@@ -12,6 +13,8 @@ class SaleEntry extends Component
     public $unit;
     public $price;
     public $grand_total;
+    public $salesId;
+
 
     public function render()
     {
@@ -20,10 +23,45 @@ class SaleEntry extends Component
         ]);
     }
 
-    public function getProduct($id)
+    public function updatedProductId()
     {
-        $product = Product::findOrfail($id);
+        $product = Product::find($this->product_id);
 
-        return dd($product);
+        $this->unit = $product->unit->symbol;
+        $this->price = $product->price;
+        $this->quantity = null;
+    }
+
+    public function updatedQuantity()
+    {
+        $this->grand_total = (int) $this->quantity * $this->price;
+    }
+
+    public function addEntry()
+    {
+        $this->validate([
+            'product_id' => 'required',
+            'quantity' => 'required'
+        ]);
+
+        $sales = Sale::findOrfail($this->salesId);
+
+        $sales->products()->attach(
+            $this->product_id,[
+            'quantity' => $this->quantity,
+            'grand_total' => $this->grand_total
+            ]);
+        
+        $products = $sales->products;
+
+        $this->resetInput();
+
+        $this->emit('saleEntryAdded', $products);
+    }
+
+    public function resetInput()
+    {
+        $this->product_id = null;
+        $this->quantity = null;
     }
 }

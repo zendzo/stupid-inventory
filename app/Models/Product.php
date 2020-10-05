@@ -28,4 +28,9 @@ class Product extends Model
     {
         return $this->belongsTo(Unit::class);
     }
+
+    public function sales()
+    {
+        return $this->belongsToMany(Sale::class)->withPivot(['id','quantity','grand_total']);
+    }
 }
