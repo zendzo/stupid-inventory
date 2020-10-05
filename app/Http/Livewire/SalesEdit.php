@@ -27,7 +27,7 @@ class SalesEdit extends Component
     {
         $this->name = $sales['name'];
         $this->code = $sales['code'];
-        $this->sale_type = $sales['sale_type'];
+        $this->sale_type = $sales['sale_type_id'];
         $this->sale_date = $sales['sale_date'];
         $this->sent_date = $sales['sent_date'];
         $this->description = $sales['description'];
@@ -45,6 +45,9 @@ class SalesEdit extends Component
             $sales = Sale::findOrfail($this->salesId);
             $sales->update([
                 'name' => $this->name,
+                'sale_type_id' => $this->sale_type,
+                'sale_date' => $this->sale_date,
+                'sent_date' => $this->sent_date,
                 'description' => $this->description
             ]);
         }

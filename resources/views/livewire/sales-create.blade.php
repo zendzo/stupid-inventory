@@ -69,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-6">
                     <div class="form-group">
                     <label for="lname">Keterangan</label>
                     <input type="text" class="form-control @error('sent_date') is-invalid @enderror" wire:model.lazy="description" placeholder="Keterangan">
