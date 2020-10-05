@@ -53,6 +53,13 @@
           </li>
 
           <li>
+            <a class="sidenav-item-link" href="{{ route('admin.sales-type') }}">
+              <span class="nav-text">Sales type</span>
+
+            </a>
+          </li>
+
+          <li>
             <a class="sidenav-item-link" href="{{ route('admin.product') }}">
               <span class="nav-text">Product</span>
 

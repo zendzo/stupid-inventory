@@ -23,6 +23,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
 
     Route::get('/unit', [UnitController::class, 'index'])->name('unit');
 
+    Route::view('/sales-type', 'administrator.sales-type.index')->name('sales-type');
+
     Route::get('/distributor', [SupplierController::class, 'index'])->name('supplier');
 
     Route::get('/sales', [SalesController::class, 'index'])->name('sales');
