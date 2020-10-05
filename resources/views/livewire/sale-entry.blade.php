@@ -4,6 +4,7 @@
             <tr>
                 <td>
                     <select wire:model="product_id" class="form-control @error('product_id') is-invalid @enderror">
+                        <option value="-1">Select Product</option>
                         @foreach ($products as $product)
                             <option value="{{ $product->id }}">
                                 {{ $product->name }}

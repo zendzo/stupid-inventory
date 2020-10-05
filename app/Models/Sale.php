@@ -13,7 +13,7 @@ class Sale extends Model
     protected $fillable = [
         'name',
         'code',
-        'sale_type',
+        'sale_type_id',
         'sale_date',
         'sent_date',
         'description',
@@ -37,5 +37,10 @@ class Sale extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class)->withPivot(['id','quantity','grand_total']);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(SalesType::class,'sale_type_id');
     }
 }

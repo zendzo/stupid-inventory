@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Sale;
-use Carbon\Carbon;
+use App\Models\SalesType;
 use illuminate\Support\Str;
 
 class SalesCreate extends Component
@@ -18,7 +18,9 @@ class SalesCreate extends Component
 
     public function render()
     {
-        return view('livewire.sales-create');
+        return view('livewire.sales-create',[
+            'salesType' => SalesType::all()
+        ]);
     }
 
     public function mount()
@@ -32,7 +34,7 @@ class SalesCreate extends Component
         $this->validate([
             'name' => 'required|min:3',
             'code' => 'required|min:3',
-            'sale_type' => 'required:min:1',
+            'sale_type' => 'required|min:1',
             'sale_date' => 'required',
             'sent_date' => 'required',
             'description' => 'required|min:5'
@@ -41,7 +43,7 @@ class SalesCreate extends Component
         $sales = Sale::create([
             'name' => $this->name,
             'code' => $this->code,
-            'sale_type' => $this->sale_type,
+            'sale_type_id' => $this->sale_type,
             'sale_date' => $this->sale_date,
             'sent_date' => $this->sent_date,
             'description' => $this->description

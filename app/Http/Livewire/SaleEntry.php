@@ -40,7 +40,7 @@ class SaleEntry extends Component
     public function addEntry()
     {
         $this->validate([
-            'product_id' => 'required',
+            'product_id' => 'required|min:1',
             'quantity' => 'required'
         ]);
 

@@ -10,4 +10,10 @@ class SalesType extends Model
     use HasFactory;
     
     protected $fillable = ['name','description'];
+    
+
+    public function sales()
+    {
+        return $this->hasMany(Sale::class, 'sale_type_id');
+    }
 }
