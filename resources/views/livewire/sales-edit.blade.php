@@ -47,7 +47,12 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="State">Tgl. Penjualan</label>
-                                <input type="text" class="form-control @error('sale_date') is-invalid @enderror" wire:model.lazy="sale_date" placeholder="DD-MM-YYY">
+                                <input type="text" class="form-control @error('sale_date') is-invalid @enderror" wire:model.lazy="sale_date"
+                                autocomplete="off"
+                                data-provide="datepicker" data-date-autoclose="true" 
+                                data-date-format="yyyy-mm-dd" data-date-today-highlight="true"                        
+                                onchange="this.dispatchEvent(new InputEvent('input'))"
+                                >
                                 @error('sale_date')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -58,7 +63,12 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="Zip">Tgl. Pengiriman</label>
-                                <input type="text" class="form-control @error('sent_date') is-invalid @enderror" wire:model.lazy="sent_date" placeholder="DD-MM-YYY">
+                                <input type="text" class="form-control @error('sent_date') is-invalid @enderror" wire:model.lazy="sent_date"
+                                autocomplete="off"
+                                data-provide="datepicker" data-date-autoclose="true" 
+                                data-date-format="yyyy-mm-dd" data-date-today-highlight="true"                        
+                                onchange="this.dispatchEvent(new InputEvent('input'))"
+                                >
                                 @error('sent_date')
                                 <div class="invalid-feedback">
                                     {{ $message }}

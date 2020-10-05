@@ -38,6 +38,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   <script src="{{ asset('admin/assets/plugins/nprogress/nprogress.js') }}"></script>
+  @yield('styles')
   <livwire:styles></livwire:styles>
 </head>
 
@@ -300,6 +301,7 @@
 
 
   <script src="{{ asset('admin/assets/js/sleek.bundle.js') }}"></script>
+  @yield('scripts')
   <livewire:scripts></livewire:scripts>
 </body>
 

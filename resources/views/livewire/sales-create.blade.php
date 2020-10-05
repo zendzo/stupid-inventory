@@ -48,7 +48,12 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="State">Tgl. Penjualan</label>
-                                <input type="text" class="form-control @error('sale_date') is-invalid @enderror" wire:model.lazy="sale_date" placeholder="DD-MM-YYY">
+                                <input type="text" class="form-control dateRange @error('sale_date') is-invalid @enderror" wire:model="sale_date"
+                                autocomplete="off"
+                                data-provide="datepicker" data-date-autoclose="true" 
+                                data-date-format="yyyy-mm-dd" data-date-today-highlight="true"                        
+                                onchange="this.dispatchEvent(new InputEvent('input'))"
+                                >
                                 @error('sale_date')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -59,7 +64,12 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="Zip">Tgl. Pengiriman</label>
-                                <input type="text" class="form-control @error('sent_date') is-invalid @enderror" wire:model.lazy="sent_date" placeholder="DD-MM-YYY">
+                                <input type="text" class="form-control dateRange @error('sent_date') is-invalid @enderror" wire:model="sent_date"
+                                autocomplete="off"
+                                data-provide="datepicker" data-date-autoclose="true" 
+                                data-date-format="yyyy-mm-dd" data-date-today-highlight="true"                        
+                                onchange="this.dispatchEvent(new InputEvent('input'))"
+                                >
                                 @error('sent_date')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -72,7 +82,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                     <label for="lname">Keterangan</label>
-                    <input type="text" class="form-control @error('sent_date') is-invalid @enderror" wire:model.lazy="description" placeholder="Keterangan">
+                    <input type="text" class="form-control @error('description') is-invalid @enderror" wire:model.lazy="description" placeholder="Keterangan">
                     @error('description')
                     <div class="invalid-feedback">
                         {{ $message }}

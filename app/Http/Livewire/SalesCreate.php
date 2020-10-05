@@ -26,7 +26,6 @@ class SalesCreate extends Component
     public function mount()
     {
         $this->code = strtoupper(Str::random(10));
-        $this->sale_date = date('d-m-Y');
     }
 
     public function addSales()
