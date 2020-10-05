@@ -20,7 +20,7 @@
           </li>
 
           <li>
-            <a class="sidenav-item-link" href="#">
+          <a class="sidenav-item-link" href="{{ route('admin.purchase') }}">
               <span class="nav-text">Pembelian</span>
               <span class="badge badge-warning">OUT</span>
             </a>

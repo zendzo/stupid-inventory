@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +26,10 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
     Route::get('/distributor', [SupplierController::class, 'index'])->name('supplier');
 
     Route::get('/sales', [SalesController::class, 'index'])->name('sales');
-
+    
     Route::get('/sales/{id}', [SalesController::class, 'show'])->name('sales.show');
+
+    Route::get('/purchase', [PurchaseController::class, 'index'])->name('purchase');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
