@@ -28,8 +28,8 @@
                                 <th scope="col">Nama</th>
                                 <th scope="col">Tipe</th>
                                 <th scope="col">Kode</th>
-                                <th scope="col">Tgl. Penjualan</th>
-                                <th scope="col">Tgl. Pengiriman</th>
+                                <th scope="col">Tgl. Pesan</th>
+                                <th scope="col">Tgl. Terima</th>
                                 <th scope="col">Keterangan</th>
                                 <th>Total</th>
                                 <th>Action</th>

@@ -52,7 +52,7 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="State">Tgl. Penjualan</label>
+                                <label for="State">Tgl. Pesan</label>
                                 <input type="text" class="form-control dateRange @error('purchase_date') is-invalid @enderror" wire:model="purchase_date"
                                 autocomplete="off"
                                 data-provide="datepicker" data-date-autoclose="true" 
@@ -68,7 +68,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="Zip">Tgl. Pengiriman</label>
+                                <label for="Zip">Tgl. Terima</label>
                                 <input type="text" class="form-control dateRange @error('sent_date') is-invalid @enderror" wire:model="sent_date"
                                 autocomplete="off"
                                 data-provide="datepicker" data-date-autoclose="true" 
