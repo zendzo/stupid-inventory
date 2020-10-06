@@ -25,4 +25,14 @@ class Purchase extends Model
     {
         return $this->belongsTo(Supplier::class);
     }
+
+    public function purchaseType()
+    {
+        return $this->belongsTo(PurchasesType::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class,'product_purchase')->withPivot(['id','quantity','grand_total']);
+    }
 }
