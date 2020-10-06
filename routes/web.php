@@ -25,13 +25,17 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
 
     Route::view('/sales-type', 'administrator.sales-type.index')->name('sales-type');
 
+    Route::view('/purchase-type', 'administrator.purchase-type.index')->name('purchase-type');
+
     Route::get('/distributor', [SupplierController::class, 'index'])->name('supplier');
 
     Route::get('/sales', [SalesController::class, 'index'])->name('sales');
     
     Route::get('/sales/{id}', [SalesController::class, 'show'])->name('sales.show');
-
+    
     Route::get('/purchase', [PurchaseController::class, 'index'])->name('purchase');
+
+    Route::get('/purchase/{id}', [PurchaseController::class, 'show'])->name('purchases.show');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

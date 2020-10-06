@@ -15,14 +15,14 @@
           <li>
             <a class="sidenav-item-link" href="{{ route('admin.sales') }}">
               <span class="nav-text">Penjualan</span>
-              <span class="badge badge-success">IN</span>
+              <span class="badge badge-warning">OUT</span>
             </a>
           </li>
 
           <li>
           <a class="sidenav-item-link" href="{{ route('admin.purchase') }}">
               <span class="nav-text">Pembelian</span>
-              <span class="badge badge-warning">OUT</span>
+              <span class="badge badge-success">IN</span>
             </a>
           </li>
 
@@ -55,6 +55,13 @@
           <li>
             <a class="sidenav-item-link" href="{{ route('admin.sales-type') }}">
               <span class="nav-text">Sales type</span>
+
+            </a>
+          </li>
+
+          <li>
+            <a class="sidenav-item-link" href="{{ route('admin.purchase-type') }}">
+              <span class="nav-text">Purchase type</span>
 
             </a>
           </li>
