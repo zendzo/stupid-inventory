@@ -38,6 +38,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
     Route::get('/purchase', [PurchaseController::class, 'index'])->name('purchase');
 
     Route::get('/purchase/{id}', [PurchaseController::class, 'show'])->name('purchases.show');
+
+    Route::get('/purchase/invoice/{id}', [PurchaseController::class, 'invoice'])->name('purchase.invoice');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

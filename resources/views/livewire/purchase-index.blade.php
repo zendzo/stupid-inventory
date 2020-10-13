@@ -52,9 +52,12 @@
                                     <a href="{{ route('admin.purchases.show', $purchase->id) }}" wire:click="getPurchases({{ $purchase->id }})" type="a" class="mb-1 btn btn-sm btn-success">
                                         <i class=" mdi mdi-checkbox-marked-outline mr-1"></i> Process
                                     </a>
-                                    <button wire:click="showPurchases" type="button" class="mb-1 btn btn-sm btn-warning">
-                                        <i class=" mdi mdi-file-document"></i> Invoice
-                                    </button>
+                                    @if ($purchase->products->count() > 0)
+                                        <a href="{{ route('admin.purchase.invoice', $purchase->id) }}" wire:click="showPurchases" type="button"
+                                            class="mb-1 btn btn-sm btn-warning">
+                                            <i class=" mdi mdi-file-document"></i> Invoice
+                                        </a>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach

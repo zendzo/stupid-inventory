@@ -61,6 +61,8 @@
           </div>
           <livewire:purchase-list :purchaseId="$purchase->id"></livewire:purchase-list>
               <livewire:purchase-entry :purchaseId="$purchase->id"></livewire:purchase-entry>
+              <a href="{{ route('admin.purchase.invoice', $purchase->id) }}" class="btn btn-lg btn-warning">
+                <i class=" mdi mdi-file-document"></i> Invoice</a>
       {{-- </form> --}}
   </div>
 </div>

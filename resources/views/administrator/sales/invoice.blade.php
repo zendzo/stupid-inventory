@@ -3,7 +3,7 @@
 @section('content')
     <div class="invoice-wrapper rounded border bg-white py-5 px-3 px-md-4 px-lg-5">
       <div class="d-flex justify-content-between">
-        <h2 class="text-dark font-weight-medium">Invoice #{{$sales->id}}</h2>
+        <h2 class="text-dark font-weight-medium">Invoice Penjualan #{{$sales->id}}</h2>
         <div class="btn-group">
           <button class="btn btn-sm btn-secondary">
             <i class="mdi mdi-printer"></i> Print</button>

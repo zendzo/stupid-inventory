@@ -19,4 +19,12 @@ class PurchaseController extends Controller
            'purchase' => $purchase
        ]);
     }
+
+    public function invoice($id)
+    {
+        $purchase = Purchase::find($id);
+        return view('administrator.purchase.invoice', [
+            'purchase' => $purchase
+        ]);
+    }
 }
