@@ -19,4 +19,12 @@ class SalesController extends Controller
            'sales' => $sales
        ]);
     }
+
+    public function invoice($id)
+    {
+        $sales = Sale::find($id);
+        return view('administrator.sales.invoice',[
+            'sales' => $sales
+        ]);
+    }
 }

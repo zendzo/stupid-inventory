@@ -32,6 +32,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
     Route::get('/sales', [SalesController::class, 'index'])->name('sales');
     
     Route::get('/sales/{id}', [SalesController::class, 'show'])->name('sales.show');
+
+    Route::get('/sales/invoice/{id}', [SalesController::class,  'invoice'])->name('sales.invoice');
     
     Route::get('/purchase', [PurchaseController::class, 'index'])->name('purchase');
 
