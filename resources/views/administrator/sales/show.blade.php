@@ -55,9 +55,11 @@
               </div>
                 <livewire:sale-list :salesId="$sales->id"></livewire:sale-list>
                 <livewire:sale-entry :salesId="$sales->id"></livewire:sale-entry>
+                <a href="{{ route('admin.sales.invoice', $sales->id) }}" class="btn btn-lg btn-warning">
+                    <i class=" mdi mdi-file-document"></i> Invoice</a>
               </div>
           </div>
-      </div
+        </div>
   </div>
 </div>
 @endsection

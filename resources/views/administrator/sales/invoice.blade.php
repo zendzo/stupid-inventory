@@ -6,8 +6,6 @@
         <h2 class="text-dark font-weight-medium">Invoice #{{$sales->id}}</h2>
         <div class="btn-group">
           <button class="btn btn-sm btn-secondary">
-            <i class="mdi mdi-content-save"></i> Save</button>
-          <button class="btn btn-sm btn-secondary">
             <i class="mdi mdi-printer"></i> Print</button>
         </div>
       </div>
