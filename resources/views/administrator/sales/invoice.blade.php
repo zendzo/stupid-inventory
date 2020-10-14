@@ -33,8 +33,8 @@
           <tr>
             <th>#</th>
             <th>Item</th>
-            <th>Description</th>
             <th>Quantity</th>
+            <th>Unit</th>
             <th>Unit Cost</th>
             <th>Total</th>
           </tr>
