@@ -15,11 +15,16 @@ class CreateProductSaleTable extends Migration
     {
         Schema::create('product_sale', function (Blueprint $table) {
             $table->id();
-            $table->integer('sale_id');
-            $table->integer('product_id');
+            $table->unsignedBigInteger('sale_id');
+            $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
             $table->integer('grand_total');
             $table->timestamps();
+        });
+
+        Schema::table('product_sale', function (Blueprint $table) {
+            $table->foreign('sale_id')->references('id')->on('sales')->cascadeOnDelete();
+            $table->foreign('product_id')->references('id')->on('products')->cascadeOnDelete();
         });
     }
 
