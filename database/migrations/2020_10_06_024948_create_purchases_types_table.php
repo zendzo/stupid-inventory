@@ -19,6 +19,10 @@ class CreatePurchasesTypesTable extends Migration
             $table->string('description');
             $table->timestamps();
         });
+
+        Schema::table('purchases', function (Blueprint $table) {
+            $table->foreign('purchase_type_id')->references('id')->on('purchases_types');
+        });
     }
 
     /**

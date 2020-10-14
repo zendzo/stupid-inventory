@@ -18,7 +18,7 @@ class CreateSalesTable extends Migration
             // $table->string('user_id');
             $table->string('name');
             $table->string('code',10);
-            $table->string('sale_type_id');
+            $table->unsignedBigInteger('sale_type_id');
             $table->date('sale_date');
             $table->date('sent_date');
             // $table->string('supplier_id');

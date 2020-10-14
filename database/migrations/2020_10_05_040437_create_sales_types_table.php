@@ -19,6 +19,10 @@ class CreateSalesTypesTable extends Migration
             $table->string('description');
             $table->timestamps();
         });
+
+        Schema::table('sales', function (Blueprint $table) {
+            $table->foreign('sale_type_id')->references('id')->on('sales_types');
+        });
     }
 
     /**
