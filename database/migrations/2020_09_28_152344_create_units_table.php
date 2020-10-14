@@ -19,6 +19,10 @@ class CreateUnitsTable extends Migration
             $table->string('symbol');
             $table->timestamps();
         });
+
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreign('unit_id')->references('id')->on('units');
+        });
     }
 
     /**
