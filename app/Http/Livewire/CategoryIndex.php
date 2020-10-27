@@ -29,6 +29,8 @@ class CategoryIndex extends Component
     public function handleCategoryUpdated($category)
     {
         session()->flash('message', 'Category '.$category['name'].'  Successfully Updated');
+
+        $this->editCategory = false;
     }
 
     public function getCategory($id)
