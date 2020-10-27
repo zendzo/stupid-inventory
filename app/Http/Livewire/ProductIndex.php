@@ -51,5 +51,9 @@ class ProductIndex extends Component
         }
 
         session()->flash('message', 'Product '.$product['name'].'  Deleted');
+
+        if ($this->editProduct) {
+            $this->editProduct = false;
+        }
     }
 }
