@@ -9985,9 +9985,9 @@
 	    SimpleJekyllSearch.init({
 	      searchInput: document.getElementById('search-input'),
 	      resultsContainer: document.getElementById('search-results'),
-	      dataSource: '/assets/data/search.json',
+	      dataSource: 'http://localhost:8000/api/data/search',
 	      searchResultTemplate: '<li><div class="link"><a href="{link}">{label}</a></div><div class="location">{location}</div><\/li>',
-	      noResultsText: '<li>No results found</li>',
+				noResultsText: "<li><i class='mdi mdi-file-excel-box'></i>  No results found</li>",
 	      limit: 10,
 	      fuzzy: true,
 	    });
