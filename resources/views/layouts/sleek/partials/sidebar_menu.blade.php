@@ -83,20 +83,20 @@
         </div>
       </ul>
     </li>
-    <li class="has-sub">
+    <li class="has-sub {{ active(['admin.user'], 'expand active') }}">
       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#user"
         aria-expanded="false" aria-controls="user">
         <i class="mdi mdi-account-group"></i>
         <span class="nav-text">User</span> <b class="caret"></b>
       </a>
-      <ul class="collapse" id="user" data-parent="#sidebar-menu">
+      <ul class="collapse {{ active(['admin.user'], 'show') }}" id="user" data-parent="#sidebar-menu">
         <div class="sub-menu">
 
-          <li>
-            <a class="sidenav-item-link" href="{{ route('admin.sales') }}">
+          <li class="{{active(['admin.user'], 'active')}}">
+            <a class="sidenav-item-link" href="{{ route('admin.user') }}">
               <i class="mdi mdi-account"></i>
               <span class="nav-text" style="margin-left: 5px;">User</span>
-              <span class="badge badge-success">OUT</span>
+              <span class="badge badge-success">user-list</span>
             </a>
           </li>
 

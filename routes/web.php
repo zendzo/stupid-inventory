@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\SupplierController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UserDashboardController;
@@ -40,6 +41,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
     Route::get('/purchase/{id}', [PurchaseController::class, 'show'])->name('purchases.show');
 
     Route::get('/purchase/invoice/{id}', [PurchaseController::class, 'invoice'])->name('purchase.invoice');
+
+    Route::get('/user', [UserController::class,'index'])->name('user');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
