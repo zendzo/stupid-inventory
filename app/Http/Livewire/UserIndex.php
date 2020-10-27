@@ -51,5 +51,9 @@ class UserIndex extends Component
         }
 
         session()->flash('message', 'User '.$user['name'].'  Deleted');
+
+        if ($this->editUser) {
+            $this->editUser = false;
+        }
     }
 }

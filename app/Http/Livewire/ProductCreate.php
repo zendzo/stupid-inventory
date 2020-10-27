@@ -54,6 +54,9 @@ class ProductCreate extends Component
     {
         $this->name = null;
         $this->description = null;
+        $this->category_id = null;
         $this->code = null;
+        $this->price = null;
+        $this->unit_id = null;
     }
 }

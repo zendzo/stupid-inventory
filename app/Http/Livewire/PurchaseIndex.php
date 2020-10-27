@@ -50,5 +50,9 @@ class PurchaseIndex extends Component
         }
 
         session()->flash('message', 'Purchases Deleted');
+
+        if ($this->editPurchases) {
+            $this->editPurchases = false;
+        }
     }
 }

@@ -52,5 +52,9 @@ class SalesTypeIndex extends Component
         }
 
         session()->flash('message', 'SalesType '.$salesType['name'].'  Deleted');
+
+        if ($this->editSalesType) {
+            $this->editSalesType = false;
+        }
     }
 }

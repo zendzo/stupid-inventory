@@ -15,7 +15,7 @@ class SupplierIndex extends Component
 
     public function render()
     {
-        return view('livewire.supplier-index',[
+        return view('livewire.supplier-index', [
             'categories' => Supplier::latest()->paginate(5)
         ]);
     }
@@ -23,19 +23,19 @@ class SupplierIndex extends Component
 
     public function handleSupplierStored($supplier)
     {
-        session()->flash('message', 'Supplier '.$supplier['name'].'  Successfully Created');
+        session()->flash('message', 'Supplier ' . $supplier['name'] . '  Successfully Created');
     }
 
     public function handleSupplierUpdated($supplier)
     {
-        session()->flash('message', 'Supplier '.$supplier['name'].'  Successfully Updated');
+        session()->flash('message', 'Supplier ' . $supplier['name'] . '  Successfully Updated');
         $this->editSupplier = false;
     }
 
     public function getSupplier($id)
     {
         $this->editSupplier = true;
-        
+
         $supplier = Supplier::findOrfail($id);
 
         $this->emit('getSupplier', $supplier);
@@ -49,6 +49,10 @@ class SupplierIndex extends Component
             $supplier->delete();
         }
 
-        session()->flash('message', 'Supplier '.$supplier['name'].'  Deleted');
+        session()->flash('message', 'Supplier ' . $supplier['name'] . '  Deleted');
+
+        if ($this->editSupplier) {
+            $this->editSupplier = false;
+        }
     }
 }

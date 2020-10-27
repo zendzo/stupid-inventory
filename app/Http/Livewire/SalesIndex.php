@@ -50,5 +50,9 @@ class SalesIndex extends Component
         }
 
         session()->flash('message', 'Sales '.$sales['name'].'  Deleted');
+
+        if ($this->editSales) {
+            $this->editSales = false;
+        }
     }
 }

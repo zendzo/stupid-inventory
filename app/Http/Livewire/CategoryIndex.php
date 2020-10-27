@@ -51,5 +51,9 @@ class CategoryIndex extends Component
         }
 
         session()->flash('message', 'Category '.$category['name'].'  Deleted');
+
+        if ($this->editCategory) {
+            $this->editCategory = false;
+        }
     }
 }

@@ -16,7 +16,7 @@ class PurchasesTypeIndex extends Component
 
     public function render()
     {
-        return view('livewire.purchases-type-index',[
+        return view('livewire.purchases-type-index', [
             'categories' => PurchasesType::latest()->paginate(5)
         ]);
     }
@@ -24,12 +24,12 @@ class PurchasesTypeIndex extends Component
 
     public function handlePurchasesTypeStored($purchasesType)
     {
-        session()->flash('message', 'PurchasesType '.$purchasesType['name'].'  Successfully Created');
+        session()->flash('message', 'PurchasesType ' . $purchasesType['name'] . '  Successfully Created');
     }
 
     public function handlePurchasesTypeUpdated($purchasesType)
     {
-        session()->flash('message', 'PurchasesType '.$purchasesType['name'].'  Successfully Updated');
+        session()->flash('message', 'PurchasesType ' . $purchasesType['name'] . '  Successfully Updated');
 
         $this->editPurchasesType = false;
     }
@@ -37,7 +37,7 @@ class PurchasesTypeIndex extends Component
     public function getPurchasesType($id)
     {
         $this->editPurchasesType = true;
-        
+
         $purchasesType = PurchasesType::findOrfail($id);
 
         $this->emit('getPurchasesType', $purchasesType);
@@ -51,6 +51,10 @@ class PurchasesTypeIndex extends Component
             $purchasesType->delete();
         }
 
-        session()->flash('message', 'PurchasesType '.$purchasesType['name'].'  Deleted');
+        session()->flash('message', 'PurchasesType ' . $purchasesType['name'] . '  Deleted');
+
+        if ($this->editPurchasesType) {
+            $this->editPurchasesType = false;
+        }
     }
 }

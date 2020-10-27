@@ -29,6 +29,8 @@ class UnitIndex extends Component
     public function handleUnitUpdated($unit)
     {
         session()->flash('message', 'Unit '.$unit['name'].'  Successfully Updated');
+
+        $this->editUnit = false;
     }
 
     public function getUnit($id)
@@ -49,5 +51,9 @@ class UnitIndex extends Component
         }
 
         session()->flash('message', 'Unit '.$unit['name'].'  Deleted');
+
+        if ($this->editUnit) {
+            $this->editUnit = false;
+        }
     }
 }
