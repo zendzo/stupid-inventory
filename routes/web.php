@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\UserController;
@@ -43,6 +44,10 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
     Route::get('/purchase/invoice/{id}', [PurchaseController::class, 'invoice'])->name('purchase.invoice');
 
     Route::get('/user', [UserController::class,'index'])->name('user');
+
+    Route::get('/report/sales', [ReportController::class, 'sales'])->name('report.sales');
+
+    Route::get('/report/purchase', [ReportController::class, 'purchase'])->name('report.purchase');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

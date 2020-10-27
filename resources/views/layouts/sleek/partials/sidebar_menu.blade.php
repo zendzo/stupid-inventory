@@ -103,24 +103,24 @@
         </div>
       </ul>
 
-    <li class="has-sub">
+    <li class="has-sub {{ active(['admin.report.*'], 'expand active') }}">
       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#report"
         aria-expanded="false" aria-controls="report">
         <i class="mdi mdi-file-document-box-multiple"></i>
         <span class="nav-text">Laporan</span> <b class="caret"></b>
       </a>
-      <ul class="collapse" id="report" data-parent="#sidebar-menu">
+      <ul class="collapse {{ active(['admin.report.*'], 'show') }}" id="report" data-parent="#sidebar-menu">
         <div class="sub-menu">
 
-          <li>
-            <a class="sidenav-item-link" href="{{ route('admin.sales') }}">
+          <li class="{{ active(['admin.report.sales'], 'active') }}">
+            <a class="sidenav-item-link" href="{{ route('admin.report.sales') }}">
               <span class="nav-text">Penjualan</span>
               <span class="badge badge-warning">OUT</span>
             </a>
           </li>
 
-          <li>
-            <a class="sidenav-item-link" href="{{ route('admin.purchase') }}">
+          <li class="{{ active(['admin.report.purchase'], 'active') }}">
+            <a class="sidenav-item-link" href="{{ route('admin.report.purchase') }}">
               <span class="nav-text">Pembelian</span>
               <span class="badge badge-success">IN</span>
             </a>
