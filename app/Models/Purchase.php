@@ -21,6 +21,11 @@ class Purchase extends Model
         'confirmed_by_admin',
     ];
 
+    public function type()
+    {
+        return $this->belongsTo(PurchasesType::class,'purchase_type_id');
+    }
+
     public function supplier()
     {
         return $this->belongsTo(Supplier::class);

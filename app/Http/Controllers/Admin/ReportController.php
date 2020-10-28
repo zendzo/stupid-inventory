@@ -14,6 +14,6 @@ class ReportController extends Controller
 
     public function purchase()
     {
-        return view('administrator.report.sales.index');
+        return view('administrator.report.purchase.index');
     }
 }

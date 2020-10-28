@@ -11,7 +11,11 @@ use Livewire\Component;
 
 class SalesReport extends Component
 {
-    public $filteredSales;
+    public $sales_type = 'all';
+    public $start_date;
+    public $end_date;
+    public $sales;
+    public $page;
 
     protected $listeners = [
         'queryEntered' => 'handleQueryEntered',
@@ -19,26 +23,36 @@ class SalesReport extends Component
 
     public function render()
     {
-        $sales = Sale::whereBetween(
+        $this->page = 'sales';
+        $this->sales = Sale::whereBetween(
             DB::raw('DATE(sale_date)'),
             [
-                Carbon::createFromFormat('Y-m-d', Date('Y-m-d'))->toDateString(),
-                Carbon::createFromFormat('Y-m-d', Date('Y-m-d'))->toDateString()
+                Carbon::createFromFormat('Y-m-d', $this->start_date ?: Date('Y-m-d'))->toDateString(),
+                Carbon::createFromFormat('Y-m-d', $this->end_date ?: Date('Y-m-d'))->toDateString()
             ]
-        )->get();
+        )
+            ->where(function ($query) {
+                if ($this->sales_type !== 'all') {
+                    $query->where('sale_type_id', $this->sales_type);
+                }
+                $query->whereNotNull('sale_type_id');
+            })
+            ->with('products')
+            ->get();
 
         return view('livewire.sales-report', [
-            'sales' => $this->filteredSales ?: $sales,
+            'sales' => $this->sales,
             'units' => Unit::select('id', 'name')->get(),
-            'saleTypes' => SalesType::select('id','name')->get()
+            'salesTypes' => SalesType::select('id', 'name')->get()
         ]);
     }
 
 
-    public function handleQueryEntered($sales, $start_date, $end_date)
+    public function handleQueryEntered($start_date, $end_date, $type)
     {
-        $this->filteredSales = $sales;
-        
+        $this->start_date = $start_date;
+        $this->end_date = $end_date;
+        $this->sales_type = $type;
         session()->flash('message', "Menampilkan Pencarian Tanggal $start_date s/d $end_date");
     }
 }

@@ -16,56 +16,9 @@
                     </div>
                     @endif
 
-                    <livewire:filter-report></livewire:filter-report>
+                    <livewire:filter-report :page="$page"></livewire:filter-report>
 
                     <hr>
-                    @if ($filteredSales)
-                    <table class="table table-hover ">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Tipe</th>
-                                <th scope="col">Kode</th>
-                                <th scope="col">Tgl. Penjualan</th>
-                                <th scope="col">Tgl. Pengiriman</th>
-                                <th scope="col">Keterangan</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($sales as $sale)
-                            <tr>
-                                <td scope="row">{{$sale['id']}}</td>
-                                <td>{{$sale['name']}}</td>
-                                <td>
-                                    {{$saleTypes->where('id', $sale['sale_type_id'])->first()->name}}
-                                </td>
-                                <td>{{$sale['code']}}</td>
-                                <td>{{$sale['sale_date']}}</td>
-                                <td>{{$sale['sent_date']}}</td>
-                                <td>{{Str::limit($sale['description'], 10)}}</td>
-                                <td>
-                                    <ul>
-                                        @php $grand_total = 0; @endphp
-                                        @foreach($sale['products'] as $product)
-                                        <li>
-                                            {{$product['name']}} <br>
-                                            <b>@</b> ({{ $product['pivot']['quantity'] }} {{ $units->where('id', $product['unit_id'])->first()->name }}) <b>Rp. {{ number_format($product['pivot']['grand_total'],2,',','.') }}</b>
-                                        </li>
-                                        @php
-                                        $grand_total = $grand_total + $product['pivot']['grand_total'];
-                                        @endphp
-                                        @endforeach
-                                    </ul>
-                                    <b>Grand Total + PPN 10% : Rp.
-                                        {{ number_format($grand_total+($grand_total*0.1),2,',','.') }}</b>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    @elseif(is_null($filteredSales))
                     <table class="table table-hover ">
                         <thead>
                             <tr>
@@ -110,7 +63,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                    @endif
                 </div>
             </div>
         </div>

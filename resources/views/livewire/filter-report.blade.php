@@ -30,18 +30,28 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
+            @if ($page === 'purchase')
             <label for="">Tipe</label>
-            <select class="form-control @error('sale_type') is-invalid @enderror" wire:model.lazy="sale_type">
-                <option value="all">Select</option>
-                @foreach ($salesType as $type)
-                <option value="{{$type->id}}">{{$type->name}} - ({{ $type->description }})</option>
-                @endforeach
-            </select>
-            @error('sale_type')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
+                <select class="form-control @error('type') is-invalid @enderror" wire:model.lazy="type">
+                    <option value="all">Select</option>
+                    @foreach ($purchasesType as $type)
+                    <option value="{{$type->id}}">{{$type->name}} - ({{ $type->description }})</option>
+                    @endforeach
+                </select>
+                @error('type')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            @elseif($page === 'sales')
+            <label for="">Tipe</label>
+                <select class="form-control @error('type') is-invalid @enderror" wire:model.lazy="type">
+                    <option value="all">Select</option>
+                    @foreach ($salesType as $type)
+                    <option value="{{$type->id}}">{{$type->name}} - ({{ $type->description }})</option>
+                    @endforeach
+                </select>
+            @endif
         </div>
     </div>
 

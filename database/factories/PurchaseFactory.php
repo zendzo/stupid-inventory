@@ -35,4 +35,14 @@ class PurchaseFactory extends Factory
             'confirmed_by_admin' => false,
         ];
     }
+
+    public function purchaseDate($date)
+    {
+        return $this->state(function (array $attributes) use ($date) {
+            return [
+                'purchase_date' => Carbon::createFromFormat('Y-m-d', $date)->toDateString(),
+            ];
+        });
+    }
+    
 }

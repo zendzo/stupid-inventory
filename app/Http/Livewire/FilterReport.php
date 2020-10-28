@@ -2,22 +2,22 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\PurchasesType;
 use Livewire\Component;
-use App\Models\Sale;
 use App\Models\SalesType;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
 
 class FilterReport extends Component
 {
     public $start_date;
     public $end_date;
-    public $sale_type = 'all';
+    public $type = 'all';
+    public $page;
 
     public function render()
     {
         return view('livewire.filter-report', [
             'salesType' => SalesType::all(),
+            'purchasesType' => PurchasesType::all(),
         ]);
     }
 
@@ -26,26 +26,9 @@ class FilterReport extends Component
         $this->validate([
             'start_date' => 'required',
             'end_date' => 'required',
+            'type' => 'required'
         ]);
 
-        $sales = Sale::whereBetween(
-            DB::raw('DATE(sale_date)'),
-            [
-                Carbon::createFromFormat('Y-m-d', $this->start_date)->toDateString(),
-                Carbon::createFromFormat('Y-m-d', $this->end_date)->toDateString()
-            ]
-        )
-            ->where(function ($query) {
-                if ($this->sale_type !== 'all') {
-                    $query->where('sale_type_id', $this->sale_type);
-                }
-                $query->whereNotNull('sale_type_id');
-            })
-            ->with('products')
-            ->get();
-
-        // dd($this->sale_type);
-
-        $this->emit('queryEntered', $sales, $this->start_date, $this->end_date);
+        $this->emit('queryEntered',  $this->start_date, $this->end_date, $this->type);
     }
 }
