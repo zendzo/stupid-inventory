@@ -3,16 +3,16 @@
 
   <!-- sidebar menu -->
   <ul class="nav sidebar-inner" id="sidebar-menu">
-    <li class="has-sub {{ active(['admin.sales', 'admin.purchase'], 'expand active') }}">
+    <li class="has-sub {{ active(['admin.sales', 'admin.sales.*', 'admin.purchase', 'admin.purchaes.*'], 'expand active') }}">
       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
         aria-expanded="false" aria-controls="dashboard">
         <i class="mdi mdi-cart"></i>
         <span class="nav-text">Transaksi</span> <b class="caret"></b>
       </a>
-      <ul class="collapse {{ active(['admin.sales', 'admin.purchase'], 'show') }}" id="dashboard" data-parent="#sidebar-menu">
+      <ul class="collapse {{ active(['admin.sales', 'admin.sales.*', 'admin.purchase', 'admin.purchase.*'], 'show') }}" id="dashboard" data-parent="#sidebar-menu">
         <div class="sub-menu">
 
-          <li class="{{ active(['admin.sales'], 'active') }}">
+          <li class="{{ active(['admin.sales','admin.sales.*'], 'active') }}">
             <a class="sidenav-item-link" href="{{ route('admin.sales') }}">
               <i class="mdi mdi-arrow-left-bold" style="padding-right: 8px;"></i>
               <span class="nav-text">Penjualan</span>
@@ -20,7 +20,7 @@
             </a>
           </li>
 
-          <li class="{{ active(['admin.purchase'], 'active') }}">
+          <li class="{{ active(['admin.purchase','admin.purchase.*'], 'active') }}">
             <a class="sidenav-item-link" href="{{ route('admin.purchase') }}">
               <i class="mdi mdi-arrow-right-bold" style="padding-right: 8px;"></i>
               <span class="nav-text">Pembelian</span>
