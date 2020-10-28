@@ -27,7 +27,8 @@ class ProductFactory extends Factory
             'code' => $this->faker->randomDigit,
             'description' => $this->faker->sentence(6),
             'unit_id' => 1,
-            'status' => true
+            'status' => true,
+            'price' => rand(1000,2000)
         ];
     }
 }
