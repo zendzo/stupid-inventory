@@ -26,7 +26,7 @@ class SaleFactory extends Factory
         return [
             'name' => $this->faker->firstName,
             'code' => Str::random(10),
-            'sale_type' => rand(1,2),
+            'sale_type_id' => rand(1,2),
             'sale_date' => Carbon::now(),
             'sent_date' => Carbon::now()->addDay(),
             'description' => $this->faker->paragraph,
@@ -34,5 +34,14 @@ class SaleFactory extends Factory
             'completed' => false,
             'confirmed_by_admin' => false,
         ];
+    }
+
+    public function setSaleDate($date)
+    {
+        return $this->state(function (array $attributes) use ($date){
+            return [
+                'sale_date' => Carbon::createFromFormat('Y-m-d', $date)->toDateString(),
+            ];
+        });
     }
 }
