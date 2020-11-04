@@ -33,4 +33,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Sale::class)->withPivot(['id','quantity','grand_total']);
     }
+
+    public function purchase()
+    {
+        return $this->belongsToMany(Purchase::class)->withPivot(['id', 'quantity', 'grand_total']);
+    }
 }

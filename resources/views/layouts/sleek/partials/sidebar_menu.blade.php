@@ -128,6 +128,13 @@
             </a>
           </li>
 
+          <li class="{{ active(['admin.report.stock'], 'active') }}">
+            <a class="sidenav-item-link" href="{{ route('admin.report.stock') }}">
+              <i class="mdi mdi-book-open" style="padding-right: 8px;"></i>
+              <span class="nav-text">Stock</span>
+            </a>
+          </li>
+
         </div>
       </ul>
     </li>

@@ -48,6 +48,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
     Route::get('/report/sales', [ReportController::class, 'sales'])->name('report.sales');
 
     Route::get('/report/purchase', [ReportController::class, 'purchase'])->name('report.purchase');
+
+    Route::get('/report/stock', [ReportController::class, 'stock'])->name('report.stock');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
