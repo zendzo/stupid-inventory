@@ -37,7 +37,15 @@
         <i class="mdi mdi-pencil-box-multiple"></i>
         <span class="nav-text">MASTER DATA</span> <b class="caret"></b>
       </a>
-      <ul class="collapse {{ active(['admin.category', 'admin.product', 'admin.unit', 'admin.sales-type', 'admin.purchase-type', 'admin.supplier'], 'show') }}" id="app" data-parent="#sidebar-menu">
+      <ul class="collapse {{ active([
+        'admin.category',
+        'admin.product',
+        'admin.unit',
+        'admin.sales-type',
+        'admin.purchase-type',
+        'admin.supplier',
+        'admin.customer'
+        ], 'show') }}" id="app" data-parent="#sidebar-menu">
         <div class="sub-menu">
 
           <li class="{{active(['admin.category'], 'active')}}">
@@ -79,6 +87,13 @@
             <a class="sidenav-item-link" href="{{ route('admin.supplier') }}">
               <i class="mdi mdi-check-circle-outline" style="margin-right: 5px;"></i>
               <span class="nav-text">Distributor</span>
+            </a>
+          </li>
+
+          <li class="{{active(['admin.customer'], 'active')}}">
+            <a class="sidenav-item-link" href="{{ route('admin.customer') }}">
+              <i class="mdi mdi-account-circle" style="margin-right: 5px;"></i>
+              <span class="nav-text">Customer</span>
             </a>
           </li>
 

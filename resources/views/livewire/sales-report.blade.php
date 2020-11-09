@@ -57,7 +57,8 @@
                                         @endforeach
                                     </ul>
                                     <b>Grand Total + PPN 10% : Rp.
-                                        {{ number_format($grand_total+($grand_total*0.1),2,',','.') }}</b>
+                                        {{ number_format($grand_total+($grand_total*0.1),2,',','.') }}
+                                    </b>
                                 </td>
                             </tr>
                             @endforeach

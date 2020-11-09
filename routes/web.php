@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UserDashboardController;
@@ -14,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [
     UserDashboardController::class, 'index'
-])->middleware(['auth'])->name('dashboard');
+    ])
+    ->middleware(['auth'])
+    ->name('dashboard');
 
 Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(){
     Route::get('/dashboard',[AdminDashboardController::class, 'index'])->name('dashboard');
@@ -30,6 +33,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
     Route::view('/purchase-type', 'administrator.purchase-type.index')->name('purchase-type');
 
     Route::get('/distributor', [SupplierController::class, 'index'])->name('supplier');
+
+    Route::get('/customer', [CustomerController::class, 'index'])->name('customer');
 
     Route::get('/sales', [SalesController::class, 'index'])->name('sales');
     
