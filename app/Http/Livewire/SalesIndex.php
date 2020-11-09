@@ -16,7 +16,7 @@ class SalesIndex extends Component
     public function render()
     {
         return view('livewire.sales-index',[
-            'sales' => Sale::latest()->paginate(5)
+            'sales' => Sale::latest()->paginate(20)
         ]);
     }
 

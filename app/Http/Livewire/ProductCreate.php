@@ -32,7 +32,7 @@ class ProductCreate extends Component
             'category_id' => 'required|min:1',
             'unit_id' => 'required|min:1',
             'code' => 'required',
-            'price' => 'required',
+            'price' => 'required|numeric|min:2',
         ]);
         
         $product = Product::create([

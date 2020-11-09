@@ -16,7 +16,7 @@ class PurchaseIndex extends Component
     public function render()
     {
         return view('livewire.purchase-index',[
-            'purchases' => Purchase::latest()->paginate(5)
+            'purchases' => Purchase::latest()->paginate(20)
         ]);
     }
 
