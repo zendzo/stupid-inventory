@@ -19,7 +19,7 @@
                     <livewire:filter-report :page="$page"></livewire:filter-report>
 
                     <hr>
-                    <table class="table table-hover ">
+                    <table class="table table-hover" id="basic-data-table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
