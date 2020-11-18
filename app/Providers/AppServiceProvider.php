@@ -18,14 +18,15 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         View::composer([
-            'administrator.report.sales.index'
+            'administrator.report.sales.index',
+            'administrator.report.stock.index'
         ], function($view){
             $salesType = SalesType::all();
             return $view->with(['salesType' => $salesType]);
         });
 
         View::composer([
-            'administrator.report.purchase.index'
+            'administrator.report.purchase.index',
         ], function ($view) {
             $purchaseType = PurchasesType::all();
             return $view->with(['purchaseType' => $purchaseType]);

@@ -57,8 +57,10 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
     Route::get('/report/purchase', [ReportController::class, 'purchase'])->name('report.purchase');
     
     Route::post('report/purchase', [ReportController::class, 'getPurchaseByDate'])->name('report.purchase.by-date');
-
+    
     Route::get('/report/stock', [ReportController::class, 'stock'])->name('report.stock');
+
+    Route::post('report/stock', [ReportController::class, 'getStockbyDate'])->name('report.stock.by-date');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
