@@ -52,7 +52,11 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'admin'], function(
 
     Route::get('/report/sales', [ReportController::class, 'sales'])->name('report.sales');
 
+    Route::post('report/sales', [ReportController::class, 'getSalesByDate'])->name('report.sales.by-date');
+    
     Route::get('/report/purchase', [ReportController::class, 'purchase'])->name('report.purchase');
+    
+    Route::post('report/purchase', [ReportController::class, 'getPurchaseByDate'])->name('report.purchase.by-date');
 
     Route::get('/report/stock', [ReportController::class, 'stock'])->name('report.stock');
 });
