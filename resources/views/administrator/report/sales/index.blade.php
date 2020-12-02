@@ -96,7 +96,7 @@
     <div class="col-lg-12">
       <div class="card card-default">
         <div class="card-header card-header-border-bottom">
-          <h2><i class="mdi mdi-book-multiple"></i> Laporan Penjualan </h2>
+          <h2><i class="mdi mdi-book-multiple"></i> Laporan Pembelian </h2>
         </div>
         <div class="card-body">
           @if (session()->has('message'))
@@ -172,7 +172,7 @@
                 <th scope="col">Nama</th>
                 <th scope="col">Tipe</th>
                 <th scope="col">Kode</th>
-                <th scope="col">Tgl. Penjualan</th>
+                <th scope="col">Tgl. Pembelian</th>
                 <th scope="col">Tgl. Pengiriman</th>
                 <th scope="col">Keterangan</th>
                 <th>Total</th>

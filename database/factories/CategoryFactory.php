@@ -23,7 +23,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            'description' => $this->faker->paragraph,
+            'description' => $this->faker->sentence,
             'code' => 'KD00'.rand(1,10)
         ];
     }

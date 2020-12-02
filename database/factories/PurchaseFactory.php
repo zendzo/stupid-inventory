@@ -29,7 +29,7 @@ class PurchaseFactory extends Factory
             'purchase_type_id' => rand(1,2),
             'purchase_date' => Carbon::now(),
             'sent_date' => Carbon::now()->addDay(),
-            'description' => $this->faker->paragraph,
+            'description' => $this->faker->text(100),
             'paid_amount' => null,
             'completed' => false,
             'confirmed_by_admin' => false,

@@ -26,7 +26,7 @@ class SupplierFactory extends Factory
             'address' => $this->faker->streetAddress,
             'phone' => $this->faker->e164PhoneNumber,
             'status' => true,
-            'description' => $this->faker->sentences,
+            'description' => $this->faker->sentence,
         ];
     }
 }

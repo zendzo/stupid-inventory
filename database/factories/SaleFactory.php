@@ -29,14 +29,14 @@ class SaleFactory extends Factory
             'sale_type_id' => rand(1,2),
             'sale_date' => Carbon::now(),
             'sent_date' => Carbon::now()->addDay(),
-            'description' => $this->faker->paragraph,
+            'description' => $this->faker->text(100),
             'paid_amount' => null,
             'completed' => false,
             'confirmed_by_admin' => false,
         ];
     }
 
-    public function setSaleDate($date)
+    public function saleDate($date)
     {
         return $this->state(function (array $attributes) use ($date){
             return [

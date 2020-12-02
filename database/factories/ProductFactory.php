@@ -23,9 +23,9 @@ class ProductFactory extends Factory
     {
         return [
             'category_id' => rand(1,5),
-            'name' => $this->faker->sentence(3),
+            'name' => $this->faker->sentence,
             'code' => $this->faker->randomDigit,
-            'description' => $this->faker->sentence(6),
+            'description' => $this->faker->sentence,
             'unit_id' => 1,
             'status' => true,
             'price' => rand(1000,2000)
