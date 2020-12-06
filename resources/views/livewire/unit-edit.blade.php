@@ -2,7 +2,7 @@
     <form class="horizontal-form" wire:submit.prevent="updateUnit">
         <div class="form-group row">
             <div class="col-12 col-md-3 text-right">
-                <label for="name">Name</label>
+                <label for="name">Nama</label>
             </div>
             <div class="col-12 col-md-9">
                 <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" wire:model.lazy="name" placeholder="Enter Unit Name">
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group row">
             <div class="col-12 col-md-3 text-right">
-                <label for="">Description</label>
+                <label for="">Singkatan</label>
             </div>
             <div class="col-12 col-md-9">
                 <input type="text" class="form-control @error('symbol') is-invalid @enderror"  wire:model.lazy="symbol" placeholder="Symbol">

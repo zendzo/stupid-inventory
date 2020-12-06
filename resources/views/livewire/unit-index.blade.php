@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="card card-default">
                 <div class="card-header card-header-border-bottom">
-                    <h2>Unit List</h2>
+                    <h2>Satuan</h2>
                 </div>
                 <div class="card-body">
                     @if (session()->has('message'))

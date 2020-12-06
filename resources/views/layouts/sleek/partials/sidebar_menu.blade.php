@@ -51,35 +51,35 @@
           <li class="{{active(['admin.category'], 'active')}}">
             <a class="sidenav-item-link" href="{{ route('admin.category') }}">
               <i class="mdi mdi-check-circle-outline" style="margin-right: 5px;"></i>
-              <span class="nav-text">Category</span>
+              <span class="nav-text">Kategori</span>
             </a>
           </li>
 
           <li class="{{active(['admin.unit'], 'active')}}">
             <a class="sidenav-item-link" href="{{ route('admin.unit') }}">
               <i class="mdi mdi-check-circle-outline" style="margin-right: 5px;"></i>
-              <span class="nav-text">Unit</span>
+              <span class="nav-text">Satuan</span>
             </a>
           </li>
 
           <li class="{{active(['admin.sales-type'], 'active')}}">
             <a class="sidenav-item-link" href="{{ route('admin.sales-type') }}">
               <i class="mdi mdi-check-circle-outline" style="margin-right: 5px;"></i>
-              <span class="nav-text">Sales type</span>
+              <span class="nav-text">Tipe Penjualan</span>
             </a>
           </li>
 
           <li class="{{active(['admin.purchase-type'], 'active')}}">
             <a class="sidenav-item-link" href="{{ route('admin.purchase-type') }}">
               <i class="mdi mdi-check-circle-outline" style="margin-right: 5px;"></i>
-              <span class="nav-text">Purchase type</span>
+              <span class="nav-text">Tipe Pemesanan</span>
             </a>
           </li>
 
           <li class="{{active(['admin.product'], 'active')}}">
             <a class="sidenav-item-link" href="{{ route('admin.product') }}">
               <i class="mdi mdi-check-circle-outline" style="margin-right: 5px;"></i>
-              <span class="nav-text">Product</span>
+              <span class="nav-text">Produk</span>
             </a>
           </li>
 
@@ -93,7 +93,7 @@
           <li class="{{active(['admin.customer'], 'active')}}">
             <a class="sidenav-item-link" href="{{ route('admin.customer') }}">
               <i class="mdi mdi-account-circle" style="margin-right: 5px;"></i>
-              <span class="nav-text">Customer</span>
+              <span class="nav-text">Pelanggan</span>
             </a>
           </li>
 
