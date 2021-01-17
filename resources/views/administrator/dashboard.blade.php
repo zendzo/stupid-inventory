@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- First Row  -->
-<div class="row">
+{{-- <div class="row">
   <div class="col-md-6 col-lg-6 col-xl-3">
     <div class="media widget-media p-4 bg-white border">
       <div class="icon rounded-circle mr-4 bg-primary">
@@ -47,5 +47,5 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 @endsection

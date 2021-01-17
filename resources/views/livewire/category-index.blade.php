@@ -25,9 +25,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody>

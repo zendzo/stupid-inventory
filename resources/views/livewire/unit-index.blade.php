@@ -25,9 +25,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Symbol</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Satuan</th>
+                                <th scope="col">Singkatan</th>
+                                <th scope="col">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody>

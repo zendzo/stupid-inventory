@@ -5,7 +5,7 @@
                 <label for="name">Nama</label>
             </div>
             <div class="col-12 col-md-9">
-                <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" wire:model.lazy="name" placeholder="Enter Unit Name">
+                <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" wire:model.lazy="name" placeholder="Nama Satuan">
                 <input type="hidden" wire:model="id">
                 @error('name')
                 <div class="invalid-feedback">
@@ -19,7 +19,7 @@
                 <label for="">Singkatan</label>
             </div>
             <div class="col-12 col-md-9">
-                <input type="text" class="form-control @error('symbol') is-invalid @enderror"  wire:model.lazy="symbol" placeholder="Symbol">
+                <input type="text" class="form-control @error('symbol') is-invalid @enderror"  wire:model.lazy="symbol" placeholder="Singkatan">
                 @error('symbol')
                 <div class="invalid-feedback">
                     {{ $message }}
