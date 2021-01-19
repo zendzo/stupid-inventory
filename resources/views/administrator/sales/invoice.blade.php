@@ -25,9 +25,9 @@
 
 @section('content')
     <div id="invoice-print" class="invoice-wrapper rounded border bg-white py-5 px-3 px-md-4 px-lg-5">
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between dontprint">
         <h2 class="text-dark font-weight-medium">Invoice Penjualan #{{$sales->id}}</h2>
-        <div class="btn-group dontprint">
+        <div class="btn-group">
           <button onclick="printPageArea('invoice-print')" class="btn btn-sm btn-secondary">
             <i class="mdi mdi-printer"></i> Print</button>
         </div>

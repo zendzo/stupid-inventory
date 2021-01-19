@@ -1,11 +1,34 @@
 @extends('layouts.sleek.main')
 
+@section('scripts')
+<script>
+  function printPageArea(areaID){
+      var printContent = document.getElementById(areaID);
+      var WinPrint = window.open('', '', 'width=900,height=650');
+      WinPrint.document.write("<link rel='stylesheet' href='{{ asset('admin/assets/css/sleek.css') }}' />");
+      WinPrint.document.write(printContent.innerHTML);
+      WinPrint.document.close();
+      WinPrint.focus();
+      WinPrint.print();
+      // WinPrint.close();
+      }
+</script>
+@endsection
+
+@section('styles')
+<style type="text/css" media="print">
+  .dontprint {
+    display: none;
+  }
+</style>
+@endsection
+
 @section('content')
-<div class="invoice-wrapper rounded border bg-white py-5 px-3 px-md-4 px-lg-5">
+<div id="invoice-print" class="invoice-wrapper rounded border bg-white py-5 px-3 px-md-4 px-lg-5">
   <div class="d-flex justify-content-between">
     <h2 class="text-dark font-weight-medium">Invoice Pembelian #{{$purchase->id}}</h2>
-    <div class="btn-group">
-      <button class="btn btn-sm btn-secondary">
+    <div class="btn-group dontprint">
+      <button onclick="printPageArea('invoice-print')" class="btn btn-sm btn-secondary">
         <i class="mdi mdi-printer"></i> Print</button>
     </div>
   </div>
