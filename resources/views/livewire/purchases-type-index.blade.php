@@ -25,8 +25,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
+                                <th scope="col">Tipe</th>
+                                <th scope="col">Deskripsi</th>
                                 <th scope="col">Handle</th>
                             </tr>
                         </thead>
