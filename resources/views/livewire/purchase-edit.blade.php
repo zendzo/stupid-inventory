@@ -1,6 +1,6 @@
 <div class="card card-default">
     <div class="card-header bg-warning card-header-border-bottom">
-        <h2>Detail Pemesanan</h2>
+        <h2>Detail Pembelian</h2>
     </div>
     <div class="card-body">
         {{-- <form wire:submit.prevent="addSales"> --}}
