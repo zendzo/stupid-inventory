@@ -16,7 +16,7 @@ use App\Http\Controllers\Secertary\SecertaryDashboardController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [UserDashboardController::class, 'index'])->middleware('auth')->name('home');
+Route::get('/', [UserDashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
 Route::group(['prefix' => 'cashier','as' => 'cashier.'], function() {
     Route::get('/dashboard', [CashierDashboardController::class, 'index'])->name('dashboard');

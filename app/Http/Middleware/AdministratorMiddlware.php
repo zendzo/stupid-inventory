@@ -19,7 +19,7 @@ class AdministratorMiddlware
     {
         if (Auth::check()){
             if (Auth::user()->role_id != 1) {
-                return redirect()->route('home');
+                return redirect()->route('dashboard');
             }
         }else{
             return redirect('/login');
