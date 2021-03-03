@@ -10,11 +10,14 @@ class UserDashboardController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            if (Auth::user()->is_admin == true) {
-                return redirect('/admin/dashboard');
+            if (Auth::user()->role_id === 1) {
+                return redirect('admin/dashboard');
+            }elseif (Auth::user()->role_id === 2) {
+                return redirect('cashier/dashboard');
+            }elseif (Auth::user()->role_id === 3) {
+                return redirect('secertary/dashboard');
             }
         }
-
-        return view('welcome');
+        return abort(404);
     }
 }
