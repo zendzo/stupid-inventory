@@ -176,7 +176,9 @@
                   <li class="dropdown-header">
                     <img src="{{ Auth::user()->profile_photo_url }}" class="img-circle" alt="User Image" />
                     <div class="d-inline-block">
-                      {{Auth::user()->name}} <small class="pt-1">{{Auth::user()->email}}</small>
+                      {{Auth::user()->name}}
+                      <small class="pt-1">{{Auth::user()->role->name}}</small>
+                      <small class="pt-1">{{Auth::user()->email}}</small>
                     </div>
                   </li>
 

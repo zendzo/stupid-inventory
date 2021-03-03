@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\UserController;
@@ -50,6 +51,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
     Route::get('/purchase/invoice/{id}', [PurchaseController::class, 'invoice'])->name('purchase.invoice');
 
     Route::get('/user', [UserController::class, 'index'])->name('user');
+
+    Route::get('/role', [RoleController::class, 'index'])->name('role');
 
     Route::get('/report/sales', [ReportController::class, 'sales'])->name('report.sales');
 

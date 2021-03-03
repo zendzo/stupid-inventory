@@ -28,15 +28,15 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'is_admin' => false
+            'role_id' => rand(2,3)
         ];
     }
 
-    public function isAdmin()
+    public function role()
     {
         return $this->state(function (array $attributes){
             return [
-                'is_admin' => true
+                'role_id' => 1
             ];
         });
     }

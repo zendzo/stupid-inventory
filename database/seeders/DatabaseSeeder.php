@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(1)->isAdmin()->create();
+        $this->call(RolesTableSeeder::class);
+        User::factory(1)->role()->create();
         Unit::factory()->create();
         Category::factory(10)->create();
         Supplier::factory(10)->create();

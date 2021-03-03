@@ -18,7 +18,7 @@ class AdministratorMiddlware
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()){
-            if (Auth::user()->is_admin != 1) {
+            if (Auth::user()->role_id != 1) {
                 return redirect('/welcome');
             }
         }else{
