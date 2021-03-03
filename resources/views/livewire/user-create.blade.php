@@ -28,6 +28,23 @@
         </div>
         <div class="form-group row">
             <div class="col-12 col-md-3 text-right">
+                <label for="role_id">Role</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <select class="form-control" name="role_id" id="role_id" wire:model.lazy="role_id">
+                    @foreach ($roles as $role)
+                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                    @endforeach
+                </select>
+                @error('role_id')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12 col-md-3 text-right">
                 <label for="">Password</label>
             </div>
             <div class="col-12 col-md-9">

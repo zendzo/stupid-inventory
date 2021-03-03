@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Role;
 use App\Models\User;
 use Livewire\Component;
 
@@ -16,7 +17,8 @@ class UserIndex extends Component
     public function render()
     {
         return view('livewire.user-index',[
-            'users' => User::latest()->paginate(5)
+            'users' => User::latest()->paginate(5),
+            'roles' => Role::all()
         ]);
     }
 

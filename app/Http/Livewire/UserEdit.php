@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Role;
 use App\Models\User;
 use Laravel\Fortify\Rules\Password;
 use Livewire\Component;
@@ -12,20 +13,33 @@ class UserEdit extends Component
     public $email;
     public $password;
     public $userId;
+    public $role_id;
 
     protected $listeners = [
         'getUser' => 'showUser'
     ];
     public function render()
     {
-        return view('livewire.user-edit');
+        return view('livewire.user-edit',[
+            'roles' => Role::where('id', '>' , 1)->get()
+        ]);
     }
 
     public function showUser($user)
     {
+        if ($user['role_id'] === 1) {
+            $this->email = null;
+            $this->name = null;
+            $this->userId = null;
+            $this->role_id = null;
+            $this->password = null;
+            return '';
+        }
+
         $this->name = $user['name'];
         $this->email = $user['email'];
         $this->userId = $user['id'];
+        $this->role_id = $user['role_id'];
     }
 
     public function updateUser()
@@ -41,7 +55,8 @@ class UserEdit extends Component
             $user->update([
                 'name' => $this->name,
                 'email' => $this->email,
-                'password' => $this->password
+                'password' => $this->password,
+                'role_id' => $this->role_id
             ]);
         }
 
