@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Purchase;
 use App\Models\PurchasesType;
 use App\Models\Supplier;
+use Illuminate\Support\Facades\Auth;
 use illuminate\Support\Str;
 
 class PurchaseCreate extends Component
@@ -54,6 +55,10 @@ class PurchaseCreate extends Component
 
         $this->emit('purchasesStored',$purchases);
 
+        if (Auth::user()->role_id === 2) {
+            return redirect()->route('cashier.purchases.show', $purchases->id);
+        }
+        
         return redirect()->route('admin.purchases.show', $purchases->id);
     }
 

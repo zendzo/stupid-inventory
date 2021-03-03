@@ -19,11 +19,39 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [UserDashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
 Route::group(['prefix' => 'cashier','as' => 'cashier.'], function() {
+    
     Route::get('/dashboard', [CashierDashboardController::class, 'index'])->name('dashboard');
+    
+    Route::get('/sales', [SalesController::class, 'index'])->name('sales');
+
+    Route::get('/sales/{id}', [SalesController::class, 'show'])->name('sales.show');
+
+    Route::get('/sales/invoice/{id}', [SalesController::class,  'invoice'])->name('sales.invoice');
+
+    Route::get('/purchase', [PurchaseController::class, 'index'])->name('purchase');
+
+    Route::get('/purchase/{id}', [PurchaseController::class, 'show'])->name('purchases.show');
+
+    Route::get('/purchase/invoice/{id}', [PurchaseController::class, 'invoice'])->name('purchase.invoice');
+
 });
 
 Route::group(['prefix' => 'secertary', 'as' => 'secertary.'], function () {
+    
     Route::get('/dashboard', [SecertaryDashboardController::class, 'index'])->name('dashboard');
+    
+    Route::get('/report/sales', [ReportController::class, 'sales'])->name('report.sales');
+
+    Route::post('report/sales', [ReportController::class, 'getSalesByDate'])->name('report.sales.by-date');
+
+    Route::get('/report/purchase', [ReportController::class, 'purchase'])->name('report.purchase');
+
+    Route::post('report/purchase', [ReportController::class, 'getPurchaseByDate'])->name('report.purchase.by-date');
+
+    Route::get('/report/stock', [ReportController::class, 'stock'])->name('report.stock');
+
+    Route::post('report/stock', [ReportController::class, 'getStockbyDate'])->name('report.stock.by-date');
+
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function () {

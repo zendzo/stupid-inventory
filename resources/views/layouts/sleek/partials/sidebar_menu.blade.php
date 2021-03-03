@@ -169,3 +169,86 @@
     
     </div>
 @endif
+
+@if (Auth::user()->role_id === 2)
+    <div class="sidebar-scrollbar">
+    
+      <!-- sidebar menu -->
+      <ul class="nav sidebar-inner" id="sidebar-menu">
+        <li
+          class="has-sub {{ active(['cashier.sales', 'cashier.sales.*', 'cashier.purchase', 'cashier.purchaes.*'], 'expand active') }}">
+          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
+            aria-expanded="false" aria-controls="dashboard">
+            <i class="mdi mdi-cart"></i>
+            <span class="nav-text">Transaksi</span> <b class="caret"></b>
+          </a>
+          <ul class="collapse {{ active(['cashier.sales', 'cashier.sales.*', 'cashier.purchase', 'cashier.purchase.*'], 'show') }}"
+            id="dashboard" data-parent="#sidebar-menu">
+            <div class="sub-menu">
+    
+              <li class="{{ active(['cashier.sales','cashier.sales.*'], 'active') }}">
+                <a class="sidenav-item-link" href="{{ route('cashier.sales') }}">
+                  <i class="mdi mdi-arrow-left-bold" style="padding-right: 8px;"></i>
+                  <span class="nav-text">Penjualan</span>
+                  <span class="badge badge-warning">OUT</span>
+                </a>
+              </li>
+    
+              <li class="{{ active(['cashier.purchase','cashier.purchase.*'], 'active') }}">
+                <a class="sidenav-item-link" href="{{ route('cashier.purchase') }}">
+                  <i class="mdi mdi-arrow-right-bold" style="padding-right: 8px;"></i>
+                  <span class="nav-text">Pembelian</span>
+                  <span class="badge badge-success">IN</span>
+                </a>
+              </li>
+    
+            </div>
+          </ul>
+        </li>
+      </ul>
+    
+    </div>
+@endif
+
+@if (Auth::user()->role_id === 3)
+    <div class="sidebar-scrollbar">
+    
+      <!-- sidebar menu -->
+      <ul class="nav sidebar-inner" id="sidebar-menu">   
+        <li class="has-sub {{ active(['secertary.report.*'], 'expand active') }}">
+          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#report"
+            aria-expanded="false" aria-controls="report">
+            <i class="mdi mdi-file-document-box-multiple"></i>
+            <span class="nav-text">Laporan</span> <b class="caret"></b>
+          </a>
+          <ul class="collapse {{ active(['secertary.report.*'], 'show') }}" id="report" data-parent="#sidebar-menu">
+            <div class="sub-menu">
+    
+              <li class="{{ active(['secertary.report.sales'], 'active') }}">
+                <a class="sidenav-item-link" href="{{ route('secertary.report.sales') }}">
+                  <i class="mdi mdi-book-open" style="padding-right: 8px;"></i>
+                  <span class="nav-text">Penjualan</span>
+                </a>
+              </li>
+    
+              <li class="{{ active(['secertary.report.purchase'], 'active') }}">
+                <a class="sidenav-item-link" href="{{ route('secertary.report.purchase') }}">
+                  <i class="mdi mdi-book-open" style="padding-right: 8px;"></i>
+                  <span class="nav-text">Pembelian</span>
+                </a>
+              </li>
+    
+              <li class="{{ active(['secertary.report.stock'], 'active') }}">
+                <a class="sidenav-item-link" href="{{ route('secertary.report.stock') }}">
+                  <i class="mdi mdi-book-open" style="padding-right: 8px;"></i>
+                  <span class="nav-text">Stock</span>
+                </a>
+              </li>
+    
+            </div>
+          </ul>
+        </li>
+      </ul>
+    
+    </div>
+@endif

@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Sale;
 use App\Models\SalesType;
+use Illuminate\Support\Facades\Auth;
 use illuminate\Support\Str;
 
 class SalesCreate extends Component
@@ -51,6 +52,10 @@ class SalesCreate extends Component
         $this->resetInput();
 
         $this->emit('salesStored',$sales);
+
+        if (Auth::user()->role_id === 2) {
+            return redirect()->route('cashier.sales.show', $sales->id);
+        }
 
         return redirect()->route('admin.sales.show', $sales->id);
     }
