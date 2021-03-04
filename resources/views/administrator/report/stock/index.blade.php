@@ -132,7 +132,11 @@
           </div>
           @endif
 
-          <form action="{{ route('admin.report.stock.by-date') }}" method="POST">
+          @if (Auth::user()->role_id === 1)
+              <form action="{{ route('admin.report.stock.by-date') }}" method="POST">
+          @else
+              <form action="{{ route('secertary.report.stock.by-date') }}" method="POST">
+          @endif
             @csrf
             @method('POST')
             <div class="row">
