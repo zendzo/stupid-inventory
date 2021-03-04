@@ -39,7 +39,7 @@
                                 <td scope="row">{{$user->id}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
-                                <td>{{$user->role->name}}</td>
+                                <td>{{$user->role ? $user->role->name : 'NA'}}</td>
                                 <td>{{$user->created_at->format('D, M Y')}}</td>
                                 <td>{{$user->updated_at->format('D, M Y')}}</td>
                                 <td>

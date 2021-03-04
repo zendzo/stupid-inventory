@@ -26,7 +26,6 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nama</th>
-                                <th scope="col">Deskripsi</th>
                                 <th scope="col">Pilihan</th>
                             </tr>
                         </thead>
@@ -35,10 +34,9 @@
                             <tr>
                                 <td scope="row">{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
-                                <td>{{$category->description}}</td>
                                 <td>
                                     <button wire:click="getRole({{$category->id}})" class="btn btn-sm btn-info text-white">Edit</button>
-                                    <button wire:click="destroy({{$category->id}})" class="btn btn-sm btn-danger text-white">Delete</button>
+                                    {{-- <button wire:click="destroy({{$category->id}})" class="btn btn-sm btn-danger text-white">Delete</button> --}}
                                 </td>
                             </tr>
                             @endforeach
