@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\Rules\Password;
 use Livewire\Component;
 
@@ -55,7 +56,7 @@ class UserEdit extends Component
             $user->update([
                 'name' => $this->name,
                 'email' => $this->email,
-                'password' => $this->password,
+                'password' => Hash::make($this->password),
                 'role_id' => $this->role_id
             ]);
         }
