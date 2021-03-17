@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use App\Models\Purchase;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
@@ -14,7 +15,7 @@ class PurchaseList extends Component
     public $grandTotal;
 
     protected $listeners = [
-        'saleEntryAdded' => 'handleSaleAdded',
+        'purchaseEntryAdded' => 'handlePurchaseAdded',
         'getPurchase' => 'getPurchaseProducts'
     ];
 
@@ -28,7 +29,7 @@ class PurchaseList extends Component
         ]);
     }
 
-    public function handleSaleAdded($products)
+    public function handlePurchaseAdded($products)
     {
         $this->products = $products;
 
@@ -42,10 +43,16 @@ class PurchaseList extends Component
 
     public function destroy($id)
     {
-        $product = DB::table('product_purchase')->where('id', '=', $id)->delete();
+        $product = DB::table('product_purchase')->where('id', '=', $id)->first();
 
         if ($product) {
-            session()->flash('message', 'Product Deleted');
+
+            $delete = DB::table('product_purchase')->where('id', '=', $id)->delete();
+
+            if ($delete) {
+                Product::findOrfail($product->product_id)->decrement('quantity', $product->quantity);
+                session()->flash('message', 'Product Deleted');
+            }
         }
 
     }
