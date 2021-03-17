@@ -27,9 +27,10 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Harga</th>
+                        <th scope="col">Satuan</th>
+                        <th scope="col">Qty</th>
                         <th scope="col">Category</th>
                         <th scope="col">Kode</th>
-                        <th scope="col">Satuan</th>
                         <th scope="col">Description</th>
                     </tr>
                 </thead>
@@ -39,9 +40,10 @@
                         <td scope="row">{{$product->id}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->price}}</td>
+                        <td>{{$product->unit->symbol}}</td>
+                        <td>{{ $product->quantity }}</td>
                         <td>{{$product->category->name}}</td>
                         <td>{{$product->code}}</td>
-                        <td>{{$product->unit->symbol}}</td>
                         <td>{{$product->description}}</td>
                         <td>
                             <button wire:click="getProduct({{$product->id}})"

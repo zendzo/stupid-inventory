@@ -15,6 +15,7 @@ class AddPriceColumnToProductsTable extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->integer('price');
+            $table->integer('quantity');
         });
     }
 

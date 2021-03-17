@@ -101,7 +101,7 @@
                         <div class="rect5"></div>
                     </div>
                     <div wire:loading.remove wire:target="addSales">
-                        Save
+                        Simpan
                     </div>
                 </button>
             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use App\Models\Sale;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
@@ -12,9 +13,11 @@ class SaleList extends Component
     public $products;
     public $salesId;
     public $grandTotal;
+    public $stockAvailable;
 
     protected $listeners = [
         'saleEntryAdded' => 'handleSaleAdded',
+        'saleQuantity' => 'handleSaleQuantity',
         'getSales' => 'getSalesProducts'
     ];
 
@@ -34,6 +37,13 @@ class SaleList extends Component
 
         session()->flash('message', 'Product Successfully Added');
     }
+
+    public function handleSaleQuantity($currentStock)
+    {
+        $this->stockAvailable = $currentStock;
+
+        session()->flash('message', 'Pemesanan Melebihi Stock Ketersediaan Product');
+    }
     
     public function getSalesProducts($sales)
     {
@@ -42,10 +52,17 @@ class SaleList extends Component
 
     public function destroy($id)
     {
-        $product = DB::table('product_sale')->where('id', '=', $id)->delete();
-
+        
+        $product = DB::table('product_sale')->where('id', '=', $id)->first();
+        
         if ($product) {
-            session()->flash('message', 'Product Deleted');
+            
+            $delete = DB::table('product_sale')->where('id', '=', $id)->delete();
+            
+            if ($delete) {
+                Product::findOrfail($product->product_id)->increment('quantity', $product->quantity);
+                session()->flash('message', 'Product Deleted');
+            }
         }
 
     }

@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="form-footer pt-5 border-top">
-            <button type="submit" class="btn btn-primary btn-default">Save</button>
+            <button type="submit" class="btn btn-primary btn-default">Simpan</button>
         </div>
     </form>
 </div>

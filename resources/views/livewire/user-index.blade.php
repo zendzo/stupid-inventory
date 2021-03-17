@@ -25,12 +25,12 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Name</th>
+                                <th scope="col">Nama</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Role</th>
-                                <th scope="col">Registered</th>
-                                <th scope="col">Last Update</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Tgl Daftar</th>
+                                <th scope="col">Tgl Update</th>
+                                <th scope="col">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody>

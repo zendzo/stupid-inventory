@@ -28,7 +28,8 @@ class ProductFactory extends Factory
             'description' => $this->faker->sentence,
             'unit_id' => 1,
             'status' => true,
-            'price' => rand(1000,2000)
+            'price' => rand(1000,2000),
+            'quantity' => rand(10,100)
         ];
     }
 }

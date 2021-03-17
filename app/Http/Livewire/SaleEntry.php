@@ -46,17 +46,29 @@ class SaleEntry extends Component
 
         $sales = Sale::findOrfail($this->salesId);
 
-        $sales->products()->attach(
-            $this->product_id,[
-            'quantity' => $this->quantity,
-            'grand_total' => $this->grand_total
-            ]);
-        
-        $products = $sales->products;
+        $product = Product::findOrfail($this->product_id);
 
-        $this->resetInput();
+        if ($product->quantity < $this->quantity) {
+            $this->emit('saleQuantity', $product->quantity);
+        }else{
+            $product->quantity = (int) $product->quantity - (int) $this->quantity;
 
-        $this->emit('saleEntryAdded', $products);
+            $product->save();
+
+            $sales->products()->attach(
+                $this->product_id,
+                [
+                    'quantity' => $this->quantity,
+                    'grand_total' => $this->grand_total
+                ]
+            );
+
+            $products = $sales->products;
+
+            $this->resetInput();
+
+            $this->emit('saleEntryAdded', $products);
+        }
     }
 
     public function resetInput()
