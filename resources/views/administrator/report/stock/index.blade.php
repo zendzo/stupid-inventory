@@ -201,6 +201,7 @@
                 <th scope="col">Tgl. Pengiriman</th>
                 <th scope="col">Keterangan</th>
                 <th>Quantity</th>
+                <th scope="col">Stok Gudang</th>
                 <th>Total</th>
               </tr>
             </thead>
@@ -224,6 +225,7 @@
                   <td>{{ $product->purchase[0]->sent_date }}</td>
                   <td>{{ $product->purchase[0]->description }}</td>
                   <td>{{ $product->pivot->quantity }}</td>
+                  <td>{{ $product->quantity }}</td>
                   <td>{{ $product->pivot->grand_total }}</td>
                 </tr>
                 @endforeach
@@ -251,6 +253,7 @@
                   <td>{{ $product->sales[0]->sent_date }}</td>
                   <td>{{ $product->sales[0]->description }}</td>
                   <td>{{ $product->pivot->quantity }}</td>
+                  <td>{{ $product->quantity }}</td>
                   <td>{{ $product->pivot->grand_total }}</td>
                 </tr>
                 @endforeach
