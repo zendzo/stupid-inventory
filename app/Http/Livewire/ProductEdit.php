@@ -14,6 +14,7 @@ class ProductEdit extends Component
     public $category_id;
     public $code;
     public $price;
+    public $quantity;
     public $unit_id;
     public $productId;
 
@@ -32,6 +33,7 @@ class ProductEdit extends Component
     {
         $this->name = $product['name'];
         $this->price = $product['price'];
+        $this->quantity = $product['quantity'];
         $this->description = $product['description'];
         $this->productId = $product['id'];
         $this->unit_id = $product['unit_id'];
@@ -43,6 +45,7 @@ class ProductEdit extends Component
     {
         $this->validate([
             'name' => 'required|min:3',
+            'quantity' => 'required|numeric|min:1',
             'price' => 'required',
             'category_id' => 'required',
             'code' => 'required',
@@ -55,6 +58,7 @@ class ProductEdit extends Component
             $product->update([
                 'name' => $this->name,
                 'price' => $this->price,
+                'quantity' => $this->quantity,
                 'description' => $this->description,
                 'category_id' => $this->category_id,
                 'code' => $this->code,

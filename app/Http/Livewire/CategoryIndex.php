@@ -16,7 +16,7 @@ class CategoryIndex extends Component
     public function render()
     {
         return view('livewire.category-index',[
-            'categories' => Category::latest()->paginate(5)
+            'categories' => Category::orderBy('id', 'DESC')->paginate(5)
         ]);
     }
 

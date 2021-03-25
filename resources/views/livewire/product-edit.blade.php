@@ -45,6 +45,20 @@
         </div>
         <div class="form-group row">
             <div class="col-12 col-md-3 text-right">
+                <label for="quantity">Kuantitas</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" id="quantity" class="form-control @error('quantity') is-invalid @enderror"
+                    wire:model.lazy="quantity" placeholder="Harga Produk">
+                @error('quantity')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12 col-md-3 text-right">
                 <label for="name">Kode</label>
             </div>
             <div class="col-12 col-md-9">

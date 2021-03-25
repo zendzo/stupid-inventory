@@ -16,7 +16,7 @@ class SupplierIndex extends Component
     public function render()
     {
         return view('livewire.supplier-index', [
-            'categories' => Supplier::latest()->paginate(5)
+            'categories' => Supplier::orderBy('id', 'DESC')->paginate(5)
         ]);
     }
 

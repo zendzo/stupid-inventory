@@ -16,7 +16,7 @@ class ProductIndex extends Component
     public function render()
     {
         return view('livewire.product-index',[
-            'products' => Product::latest()->paginate(20)
+            'products' => Product::orderBy('id', 'DESC')->paginate(20)
         ]);
     }
 

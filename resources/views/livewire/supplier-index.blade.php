@@ -29,6 +29,7 @@
                                 <th scope="col">Address</th>
                                 <th scope="col">Phone</th>
                                 <th scope="col">Description</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -40,6 +41,13 @@
                                 <td>{{$supplier->address}}</td>
                                 <td>{{$supplier->phone}}</td>
                                 <td>{{$supplier->description}}</td>
+                                <td>
+                                    @if ($supplier->status)
+                                        Aktif
+                                    @else
+                                        Tidak Aktif
+                                    @endif
+                                </td>
                                 <td>
                                     <button wire:click="getSupplier({{$supplier->id}})" class="btn btn-sm btn-info text-white">Edit</button>
                                     <button wire:click="destroy({{$supplier->id}})" class="btn btn-sm btn-danger text-white">Delete</button>

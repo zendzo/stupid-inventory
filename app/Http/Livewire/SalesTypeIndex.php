@@ -17,7 +17,7 @@ class SalesTypeIndex extends Component
     public function render()
     {
         return view('livewire.sales-type-index',[
-            'categories' => SalesType::latest()->paginate(5)
+            'categories' => SalesType::orderBy('id', 'DESC')->paginate(5)
         ]);
     }
 

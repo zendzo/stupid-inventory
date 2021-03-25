@@ -16,7 +16,7 @@ class UnitIndex extends Component
     public function render()
     {
         return view('livewire.unit-index',[
-            'units' => Unit::latest()->paginate(5)
+            'units' => Unit::orderBy('id', 'DESC')->paginate(5)
         ]);
     }
 
