@@ -24,7 +24,7 @@
                     <table class="table table-hover ">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">Id</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Deskripsi</th>
                                 <th scope="col">Pilihan</th>
